@@ -1,0 +1,13 @@
+import pdf_reader
+
+
+def test_hello():
+    print(pdf_reader.ret_hello())
+
+
+def test_goodbye():
+    print(pdf_reader.ret_goodbye())
+
+
+test_hello()
+test_goodbye()
