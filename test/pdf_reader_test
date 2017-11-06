@@ -9,5 +9,11 @@ def test_goodbye():
     print(pdf_reader.ret_goodbye())
 
 
+def test_pdf_info(pdf_name):
+    pdf_reader.pdf_info(pdf_name)
+
+
+
 test_hello()
 test_goodbye()
+test_pdf_info("Andersens_Fairy_Tales_NT.pdf")
