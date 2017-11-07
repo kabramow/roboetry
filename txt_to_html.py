@@ -1,37 +1,14 @@
-def default_html():
-    html_str = """
-    <table border=1>
-         <tr>
-           <th>Number</th>
-           <th>Square</th>
-         </tr>
-         <indent>
-         <% for i in range(10): %>
-           <tr>
-             <td><%= i %></td>
-             <td><%= i**2 %></td>
-           </tr>
-         </indent>
-    </table>
-    """
-
-    Html_file = open("filename", "w")
-    Html_file.write(html_str)
-    Html_file.close()
 
 
-def wrapStringInHTMLWindows(program, poem_words, text):
-    import datetime
+def wrap_string_in_html(program, poem_words, text):
     from webbrowser import open_new_tab
-
-    now = datetime.datetime.today().strftime("%Y%m%d-%H%M%S")
 
     filename = program + '.html'
     f = open(filename,'w')
 
     wrapper = """<html>
     <head>
-        <title>%s output - %s</title>
+        <title>%s output</title>
         <style>
             body {
                 font-family: Georgia;
@@ -42,7 +19,7 @@ def wrapStringInHTMLWindows(program, poem_words, text):
             }
             #blackout {
                 background-color: black;
-                color: navy;
+                color: black;
             }
         </style>
     </head>
@@ -56,7 +33,7 @@ def wrapStringInHTMLWindows(program, poem_words, text):
         </body>
     </html>"""
 
-    whole = wrapper % (program, now, body_generator(poem_words, text))
+    whole = wrapper % (program, body_generator(poem_words, text))
     f.write(whole)
     f.close()
 
@@ -64,7 +41,7 @@ def wrapStringInHTMLWindows(program, poem_words, text):
 
 
 def body_generator(poem_words, text):
-    text.replace('\n', "</p><p id=\"blackout\">")
+    #text.replace('\n', "</p><p id=\"blackout\">")
     text_words = text.split(" ")
     print(text_words)
     out_text = ""
