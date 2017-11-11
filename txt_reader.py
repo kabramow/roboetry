@@ -51,3 +51,18 @@ def get_up_to_20_random_words(string):
                 ret_list.append(words[word_pos])
 
     return ret_list
+
+
+def get_title(file_name):
+    f = open(file_name, 'r')
+    text = f.read()
+    f.close()
+
+    lines = text.split('\n')
+    first_line = lines[0]
+    title = first_line.replace("The Project Gutenberg EBook of ","")
+    "American Fairy Tales, by L. Frank Baum"
+    title = title.replace(", by ", " </i>by ")
+    title = "<i>" + title
+
+    return title
