@@ -1,11 +1,15 @@
-import math, txt_reader
+import math
+import txt_reader
+import haiku
+import constants
+import nltk
 
 
-def wrap_string_in_html(program, source_file):
+def wrap_string_in_html(output_file_name, source_file):
     from webbrowser import open_new_tab
 
-    filename = program + '.html'
-    f = open(filename,'w')
+    filename = output_file_name + '.html'
+    f = open(filename, 'w')
 
     wrapper = """<html>
     <head>
@@ -59,33 +63,37 @@ def wrap_string_in_html(program, source_file):
         </body>
     </html>"""
 
-    text = txt_reader.get_random_selection(source_file)
-    poem_words = txt_reader.get_up_to_20_random_words(text)
+    # text = txt_reader.get_random_selection(source_file)
+    # poem_words = txt_reader.get_up_to_20_random_words(text)
     title = txt_reader.get_title(source_file)
 
-    whole = wrapper % (program,"%", title, poem_generator(poem_words), body_generator(poem_words, text))
+    haiku_poem = haiku.make_haiku(source_file)
+
+    whole = wrapper % (output_file_name, "%", title, poem_generator(haiku_poem), body_generator(haiku_poem))
     f.write(whole)
     f.close()
 
     open_new_tab(filename)
-    #return whole
 
 
-def body_generator(poem_words, text):
-    text_words = text.split(" ")
-    print(text_words)
+def body_generator(haiku_poem):
+    """docString
+    purpose statement
+    None -> String"""
+
+    text_words = haiku_poem.words_in_chosen_text
+    poem = nltk.word_tokenize(haiku_poem.poem)
     out_text = ""
     for word in text_words:
-        if len(poem_words) != 0:
-            if word == poem_words[0]:
-                print("here")
-                poem_words = poem_words[1:]
+        if len(poem) != 0:
+            if word == poem[0]:
+                poem = poem[1:]
                 out_text += "<span id=\"poem\">" + word + "</span>" + " "
-            elif word == "\n":
+            elif word == constants.FAKE_NEW_LINE:
                 out_text += "<br>"
             else:
                 out_text += word + " "
-        elif word == "\n":
+        elif word == constants.FAKE_NEW_LINE:
             out_text += "<br>"
         else:
             out_text += word + " "
@@ -93,19 +101,24 @@ def body_generator(poem_words, text):
     return out_text
 
 
-def poem_generator(poem_words):
+def poem_generator(haiku_poem):
+    poem_text = haiku_poem.poem
+    poem_text = poem_text.replace("\n", "\n</p><p>\n")
+    return poem_text
+
+
+def poem_generator_for_non_haiku(poem_words):
     words_per_line = math.trunc(len(poem_words) / 3)
     first_line = poem_words[0:words_per_line]
     middle_line = poem_words[words_per_line:(-1*words_per_line)]
     last_line = poem_words[(-1*words_per_line):]
-    retString = ""
+    ret_string = ""
     for word in first_line:
-        retString += word + " "
-    retString += "\n</p><p>\n"
+        ret_string += word + " "
+    ret_string += "\n</p><p>\n"
     for word in middle_line:
-        retString += word + " "
-    retString += "\n</p><p>\n"
+        ret_string += word + " "
+    ret_string += "\n</p><p>\n"
     for word in last_line:
-        retString += word + " "
-    return retString
-
+        ret_string += word + " "
+    return ret_string
