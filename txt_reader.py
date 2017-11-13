@@ -61,7 +61,6 @@ def get_title(file_name):
     lines = text.split('\n')
     first_line = lines[0]
     title = first_line.replace("The Project Gutenberg EBook of ", "")
-    "American Fairy Tales, by L. Frank Baum"
     title = title.replace(", by ", " </i>by ")
     title = "<i>" + title
 
