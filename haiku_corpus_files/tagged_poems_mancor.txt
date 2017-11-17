@@ -512,141 +512,263 @@ even/RB mountains/NNS gentle/JJ easing/VBG into/IN earth/NN Death/NNP Valley/NNP
 - mountains/VBZ -> NNS
 - earth/JJ -> NN
 ******************************************************************************************************
-alkali/NN clouds/NN over/IN lava/JJ mountains/NNS moonrise/VB
+******************************************************************************************************
+alkali/NN clouds/NNS over/IN lava/JJ mountains/NNS moonrise/NN
+- clouds/NN -> NNS
+- lava/JJ -> NN
+- moonrise/VB -> NN
 wind/NN mountain/NN inverted/VBN in/IN the/DT crater/NN invisible/JJ
 movement/NN of/IN a/DT bush/NN an/DT animal/NN the/DT wind/NN of/IN mountains/NNS moving/VBG
 abandoned/VBN a/DT photo/NN of/IN someone/NN 's/POS eyes/NNS moving/VBG in/IN the/DT wind/NN
-one/CD bird/NN its/PRP$ cry/NN so/RB human/JJ alone/NN
+one/CD bird/NN its/PRP$ cry/NN so/RB human/JJ alone/JJ
+- alone/NN -> JJ
 wrinkling/VBG up/RP along/IN the/DT shore/NN an/DT old/JJ ocean/NN
-mom/NN leaves/VBZ the/DT door/NN partly/RB open/VBD her/PRP many/JJ years/NNS
-cricket/NN shapes/NNS arthritic/JJ knuckles/NNS of/IN shortened/JJ days/NNS
-child/NN 's/POS fingers/NNS trace/VBP on/IN grandma/NN 's/POS hands/VBZ the/DT liver/JJ spots/NNS of/IN aging/VBG
-an/DT old/JJ sea/NN crone/NN remembering/VBG mermaid/JJ tales/NNS as/IN true/JJ
+mom/NN leaves/VBZ the/DT door/NN partly/RB open/VBN her/PRP$ many/JJ years/NNS
+- open/VBD -> VBN
+- her/PRP -> PRP$
+cricket/NN shapes/NNS arthritic/JJ knuckles/NNS of/IN shortened/VBN days/NNS
+- shortened/JJ -> VBN
+child/NN 's/POS fingers/NNS trace/VBP on/IN grandma/NN 's/POS hands/NNS the/DT liver/JJ spots/NNS of/IN aging/VBG
+- hands/VBZ -> NNS
+an/DT old/JJ sea/NN crone/NN remembering/VBG mermaid/NN tales/NNS as/IN true/JJ
+- mermaid/JJ -> NN
 hot/JJ flashes/NNS blushes/NNS of/IN youth/NN getting/VBG old/JJ
-grandmother/RB squeezing/VBG on/IN her/PRP$ driver/NN 's/POS license/NN the/DT name/NN of/IN many/JJ men/NNS
+grandmother/NN squeezing/VBG on/IN her/PRP$ driver/NN 's/POS license/NN the/DT name/NN of/IN many/JJ men/NNS
+- grandmother/RB -> NN
 box/NN canyon/NN walls/NNS being/VBG with/IN someone/NN you/PRP hate/VBP
-in/IN box/NN canyon/VBP the/DT narrow-mined/JJ couple/NN argue/NN
-after/IN the/DT quarrel/NN chewed/VBD cheeks/NNS saying/VBG the/DT words/NNS
-sacred/VBN grove/VB a/DT spirit/NN trade/NN oaks/NNS and/CC I/PRP
-fairy/NN ring/VBG all/DT past/JJ secrets/NNS come/VBP to/TO light/NN
-mountain/NN wind/IN the/DT spirit/NN eye/NN sees/NNS traveling/VBG far/RB
-sunset/VBN illumination/NN of/IN other/JJ worlds/NNS clouds/NNS
+in/IN box/NN canyon/NN the/DT narrow-mined/JJ couple/NN argue/NN
+- canyon/VBP -> NN
+after/IN the/DT quarrel/NN chewed/VBN cheeks/NNS saying/VBG the/DT words/NNS
+- chewed/VBD -> VBN
+sacred/JJ grove/NN a/DT spirit/NN trade/NN oaks/NNS and/CC I/PRP
+- sacred/VBN -> JJ
+- grove/VB -> NN
+fairy/NN ring/NN all/DT past/JJ secrets/NNS come/VBP to/TO light/NN
+- ring/VBG -> NN
+mountain/NN wind/NN the/DT spirit/NN eye/NN sees/VBZ traveling/VBG far/RB
+- wind/IN -> NN
+- sees/NNS -> VBZ
+sunset/NN illumination/NN of/IN other/JJ worlds/NNS clouds/NNS
+- sunset/VBN -> NN
 the/DT godless/JJ month/NN busy/JJ with/IN preparations/NNS for/IN Christmas/NNP
 Halloween/NNP being/VBG scared/VBN to/TO sweep/VB under/IN the/DT bed/NN
-Halloween/NNP weirdness/VBD the/DT old/JJ fence/NN post/NN sprouts/VBZ a/DT pumpkin/JJ face/NN
+Halloween/NNP weirdness/NN the/DT old/JJ fence/NN post/NN sprouts/VBZ a/DT pumpkin/NN face/NN
+- weirdness/VBD -> NN
+- pumpkin/JJ -> NN
 deserted/VBN house/NN wild/JJ roses/NNS still/RB have/VBP a/DT view/NN of/IN the/DT remote/JJ coast/NN
 vacant/JJ stares/NNS from/IN the/DT vacant/JJ house/NN no/DT one/CD looks/VBZ
 desert/NN wind/NN whistling/VBG through/IN bird/NN bones/NNS Indian/JJ breath/NN
-Navajo/NNP sandstone/NN face/NN of/IN a/DT rock/NN weeping/NN
-emerald/NN pools/NNS in/IN Navajo/NNP sandstone/NN Indian/NNP red/VBD
-Navajo/NNP sandstone/NN fissures/VBZ opening/VBG to/TO heaven/VB
-painted/VBN on/IN Indian/JJ cave/NN walls/NNS lizard/JJ eyes/NNS
-prayer/NN flags/NNS ground/NN shadows/VBZ in/IN weird/JJ shapes/NNS
+Navajo/JJ sandstone/NN face/NN of/IN a/DT rock/NN weeping/VBG
+- Navajo/NNP -> JJ
+- weeping/NN -> VBG
+emerald/NN pools/NNS in/IN Navajo/JJ sandstone/NN Indian/JJ red/JJ
+- Navajo/NNP -> JJ
+- Indian/NNP -> JJ
+- red/VBD -> JJ
+Navajo/JJ sandstone/NN fissures/NNS opening/VBG to/TO heaven/NN
+- Navajo/NNP -> JJ
+- fissures/VBZ -> NNS
+- heaven/VB -> NN
+painted/VBN on/IN Indian/JJ cave/NN walls/NNS lizard/NN eyes/NNS
+- lizard/JJ -> NN
+prayer/NN flags/NNS ground/VBP shadows/NNS in/IN weird/JJ shapes/NNS
+- ground/NN -> VBP
+- shadows/VBZ -> NNS
 prayer/NN flags/NNS tinkling/VBG bells/NNS
-vehicles/NNS to/TO heaven/VB pray/NN flags/NNS surround/VBD the/DT used/JJ car/NN lot/NN
+vehicles/NNS to/TO heaven/NN pray/VBP flags/NNS surround/VBP the/DT used/JJ car/NN lot/NN
+- heaven/VB -> NN
+- pray/NN -> VBP
+- surround/VBD -> VBP
 remembering/VBG mom/NN the/DT same/JJ old/JJ fire/NN in/IN an/DT altar/NN candle/NN
-an/DT altar/NN candle/NN lit/NN for/IN your/PRP$ soul/NN journey/NN warms/NNS my/PRP$ hands/NNS
-pumpkin/JJ pies/NNS remembering/VBG with/IN a/DT grin/NN the/DT Jack-o-lantern/JJ
+an/DT altar/NN candle/NN lit/VBN for/IN your/PRP$ soul/NN journey/NN warms/VBZ my/PRP$ hands/NNS
+- lit/NN -> VBN
+- warms/NNS -> VBZ
+pumpkin/NN pies/NNS remembering/VBG with/IN a/DT grin/NN the/DT Jack-o-lantern/NNP
+- pumpkin/JJ -> NN
+- Jack-o-lantern/JJ -> NNP
 light/NN from/IN the/DT pumpkin/NN 's/POS grin/NN a/DT full/JJ moon/NN
 moonrise/NN wind/NN blows/VBZ out/RP the/DT light/NN in/IN the/DT pumpkin/NN
-carved/VBN pumpkin/JJ admiring/VBG our/PRP$ art/NN the/DT moon/NN comes/VBZ on/IN the/DT porch/NN
+carved/VBN pumpkin/NN admiring/VBG our/PRP$ art/NN the/DT moon/NN comes/VBZ on/IN the/DT porch/NN
+- pumpkin/JJ -> NN
 white/JJ clouds/NNS bury/VBP the/DT mountains/NNS in/IN deepest/JJS black/JJ
 mountains/NNS between/IN us/PRP holding/VBG back/RP the/DT dawn/NN hours/NNS of/IN my/PRP$ longing/NN
-mountain/NN caves/NNS wind/VBP carving/VBG empty/JJ eye/NN sockets/NNS
-bodies/NNS on/IN Indian/JJ ritual/JJ ground/NN wrecked/VBD cars/NNS
+mountain/NN caves/NNS wind/NN carving/VBG empty/JJ eye/NN sockets/NNS
+- wind/VBP -> NN
+bodies/NNS on/IN Indian/JJ ritual/NN ground/NN wrecked/VBN cars/NNS
+- ritual/JJ -> NN
+- wrecked/VBD -> VBN
 where/WRB Indians/NNPS died/VBD the/DT carcasses/NNS of/IN ponies/NNS of/IN old/JJ cars/NNS
-Indian/JJ rocks/VBZ the/DT night/NN hawk/NN 's/POS spirit/NN with/IN a/DT whir/NN of/IN wings/NNS
-pages/NNS torn/VBP from/IN a/DT sketchbook/NN far/RB mountain/NN ridges/NNS
-autumn/NN river/NN covering/VBG my/PRP$ feet/NNS wet/VBP with/IN golden/JJ leaves/NNS
+Indian/JJ rocks/NNS the/DT night/NN hawk/NN 's/POS spirit/NN with/IN a/DT whir/NN of/IN wings/NNS
+- rocks/VBZ -> NNS
+pages/NNS torn/VBN from/IN a/DT sketchbook/NN far/JJ mountain/NN ridges/NNS
+- torn/VBP -> VBN
+- far/RB -> JJ
+autumn/NN river/NN covering/VBG my/PRP$ feet/NNS wet/JJ with/IN golden/JJ leaves/NNS
+- wet/VBP -> JJ
 quiet/JJ eddy/NN pools/NNS swirl/VBP at/IN ankles/NNS in/IN autumn/NN the/DT ancient/NN dead/JJ
-in/IN this/DT light/JJ flowing/VBG through/IN the/DT ages/NNS desert/VBP river/NN
-fall/NN rocks/VBZ tumble/JJ down/RP a/DT dry/JJ river/NN bed/NN
+in/IN this/DT light/NN flowing/VBG through/IN the/DT ages/NNS desert/NN river/NN
+- light/JJ -> NN
+- desert/VBP -> NN
+fall/NN rocks/NNS tumble/VBP down/RP a/DT dry/JJ river/NN bed/NN
+- rocks/VBZ -> NNS
+- tumble/JJ -> VBP
 white/JJ water/NN well-washed/JJ river/NN spirits/NNS
-white/JJ ghost/NN waves/NNS rocky/VBP river/NN ripples/NNS roll/VBP upstream/NN
+white/JJ ghost/NN waves/NNS rocky/JJ river/NN ripples/NNS roll/VBP upstream/NN
+- rocky/VBP -> JJ
 wind/NN rushing/VBG into/IN the/DT valley/NN rockwater/NN
 the/DT top/NN of/IN the/DT rock/NN in/IN the/DT bottom/NN of/IN the/DT pool/NN another/DT stone/NN
-winding/VBG river/NN road/NN the/DT giant/JJ forest/NN approaches/NNS night/NN
-atop/IN the/DT mountain/NN mammoth/NN rocks/NNS stare/VBP down/RP a/DT smooth/JJ gray/JJ sea/NN
-bright/JJ sun/NN on/IN the/DT long/JJ waves/NNS of/IN autumn/JJ end/NN of/IN a/DT day/NN
+winding/VBG river/NN road/NN the/DT giant/JJ forest/NN approaches/VBZ night/NN
+- approaches/NNS -> VBZ
+atop/IN the/DT mountain/NN mammoth/JJ rocks/NNS stare/VBP down/RP a/DT smooth/JJ gray/JJ sea/NN
+- mammoth/NN -> JJ
+bright/JJ sun/NN on/IN the/DT long/JJ waves/NNS of/IN autumn/NN end/NN of/IN a/DT day/NN
+- autumn/JJ -> NN
 night/NN the/DT horizon/NN sinks/VBZ into/IN the/DT blue/JJ water/NN
 stones/NNS in/IN the/DT desert/NN landscape/NN my/PRP$ bones/NNS
-ascending/VBG alone/RB the/DT threshold/NN to/TO heaven/VB barren/NNS rock/VB
-dry/JJ riverbed/NN in/IN one/CD of/IN its/PRP$ rocks/NNS dreamless/NN sleep/NN
+ascending/VBG alone/RB the/DT threshold/NN to/TO heaven/NN barren/VBN rock/NN
+- heaven/VB -> NN
+- barren/NNS -> VBN
+- rock/VB -> NN
+dry/JJ riverbed/NN in/IN one/CD of/IN its/PRP$ rocks/NNS dreamless/JJ sleep/NN
+- dreamless/NN -> JJ
 flute/NN notes/NNS in/IN spirit/NN rocks/NNS answers/NNS
 leaving/VBG in/IN a/DT dream/NN soul/NN in/IN the/DT lizard/NN
 morning/NN cliffs/NNS two/CD crows/NNS play/VBP tag/NN with/IN spirit/NN shadows/NNS
 spirit/NN pictures/NNS etched/VBN in/IN sandstone/NN the/DT unseen/JJ hand/NN
-spirit/NN bodies/NNS waving/VBG from/IN cacti/NN plastic/NN sacks/NNS
-Nevada/NNP spirit/NN lands/VBZ garbage/NN blowing/NN in/IN bushes/NNS
-spirit/NN in/IN retreat/NN cleaning/NN first/RB the/DT black/JJ stove/NN a/DT cup/NN of/IN cold/JJ water/NN
+spirit/NN bodies/NNS waving/VBG from/IN cacti/NNS plastic/NN sacks/NNS
+- cacti/NN -> NNS
+Nevada/NNP spirit/NN lands/NNS garbage/NN blowing/VBG in/IN bushes/NNS
+- lands/VBZ -> NNS
+- blowing/NN -> VBG
+spirit/NN in/IN retreat/NN cleaning/VBG first/RB the/DT black/JJ stove/NN a/DT cup/NN of/IN cold/JJ water/NN
+- cleaning/NN -> VBG
 mission/NN spirits/NNS in/IN swallows/NNS and/CC pigeons/NNS birds/NNS of/IN paradise/NN
-morning/NN light/NN stretches/NNS down/RP the/DT cliff/NN its/PRP$ spirit/NN shape/NN
-waiting/VBG room/NN a/DT patch/NN of/IN sunlight/JJ wears/NNS out/RP the/DT chairs/NNS
+morning/NN light/NN stretches/VBZ down/RP the/DT cliff/NN its/PRP$ spirit/NN shape/NN
+- stretches/NNS -> VBZ
+waiting/VBG room/NN a/DT patch/NN of/IN sunlight/NN wears/VBZ out/RP the/DT chairs/NNS
+- sunlight/JJ -> NN
+- wears/NNS -> VBZ
 recycling/VBG old/JJ glass/NN the/DT rocky/JJ beach/NN jewel-covered/JJ coves/NNS
-windless/NN surf/VB how/WRB easily/RB the/DT old/JJ folks/NNS are/VBP entertained/VBN
-worn-down/JJ hills/NNS folding/VBG into/IN earth/NN an/DT old/JJ dog/NN sits/NNS
-elephant/JJ parade/VBD the/DT old/JJ aunt/NN absently/RB fingers/VBZ her/PRP throat/NN
-clown/NN 's/POS old/JJ car/NN when/WRB it/PRP falls/VBZ apart/RB papa/NN does/VBZ n't/RB laugh/VB
+windless/JJ surf/NN how/WRB easily/RB the/DT old/JJ folks/NNS are/VBP entertained/VBN
+- windless/NN -> JJ
+- surf/VB -> NN
+worn-down/JJ hills/NNS folding/VBG into/IN earth/NN an/DT old/JJ dog/NN sits/VBZ
+- sits/NNS -> VBZ
+elephant/NN parade/NN the/DT old/JJ aunt/NN absently/RB fingers/VBZ her/PRP$ throat/NN
+- elephant/JJ -> NN
+- parade/VBD -> NN
+- her/PRP -> PRP$
+clown/NN 's/POS old/JJ car/NN when/WRB it/PRP falls/VBZ apart/RP papa/NN does/VBZ n't/RB laugh/VB
+- apart/RB -> RP
 surprised/VBN in/IN the/DT dark/NN blood/NN is/VBZ black/JJ
 his/PRP$ hot/JJ cheeks/NNS whitened/VBN by/IN moonlight/NN the/DT reformed/VBN poet/NN
-a/DT howling/NN wind/NN at/IN the/DT deep/JJ ache/NN a/DT broken/JJ bone/NN
-weathered/JJ palms/VBD the/DT scythe/JJ well-sharpened/JJ worn/NN in/IN the/DT center/NN
-enlightened/VBD the/DT jack-o-lantern/NN has/VBZ a/DT fat/JJ candle/NN
+a/DT howling/VBN wind/NN at/IN the/DT deep/JJ ache/NN a/DT broken/VBN bone/NN
+- howling/NN -> VBN
+- broken/JJ -> VBN
+weathered/VBN palms/NNS the/DT scythe/NN well-sharpened/JJ worn/VBN in/IN the/DT center/NN
+- weathered/JJ -> VBN
+- palms/VBD -> NNS
+- scythe/JJ -> NN
+- worn/NN -> VBN
+enlightened/VBN the/DT jack-o-lantern/NN has/VBZ a/DT fat/JJ candle/NN
+- enlightened/VBD -> VBN
 alone/RB going/VBG to/TO sleep/VB with/IN a/DT grin/NN on/IN the/DT pumpkin/NN
-all/PDT the/DT light/JJ inside/NN of/IN a/DT pumpkin/NN this/DT dark/NN night/NN
+all/PDT the/DT light/NN inside/NN of/IN a/DT pumpkin/NN this/DT dark/JJ night/NN
+- light/JJ -> NN
+- dark/NN -> JJ
 light/NN leaking/VBG the/DT grin/NN of/IN pumpkins/NNS growing/VBG moldy/NN
 together/RB lifting/VBG the/DT pumpkin/NN the/DT curved/JJ stem/NN
-night/NN dark/NN inside/IN the/DT pumpkin/NN its/PRP$ warm/JJ glow/NN
+night/NN dark/JJ inside/IN the/DT pumpkin/NN its/PRP$ warm/JJ glow/NN
+- dark/NN -> JJ
 scary/JJ Halloween/NNP the/DT candle/NN in/IN the/DT pumpkin/NN goes/VBZ out/RP
-watching/VBG our/PRP$ bed/NN the/DT pumpkin/NN 's/POS lid/JJ smokes/NNS
-bedside/RB candle/JJ putting/VBG it/PRP in/IN the/DT pumpkin/NN
+watching/VBG our/PRP$ bed/NN the/DT pumpkin/NN 's/POS lid/NN smokes/VBZ
+- lid/JJ -> NN
+- smokes/NNS -> VBZ
+bedside/NN candle/NN putting/VBG it/PRP in/IN the/DT pumpkin/NN
+- bedside/RB -> NN
+- candle/JJ -> NN
 shadows/NNS moving/VBG on/IN the/DT bedroom/NN wall/NN a/DT pumpkin/NN 's/POS grin/NN
-unable/JJ to/TO sleep/VB the/DT Jack-o-lantern/JJ watches/NNS us/PRP all/DT night/NN
-grandpa/NN gives/VBZ the/DT Jack-o-lantern/JJ his/PRP$ snag-toothed/JJ grin/NN
-kite/JJ string/VBG tightly/RB rolled/VBN first/JJ day/NN of/IN school/NN
+unable/JJ to/TO sleep/VB the/DT Jack-o-lantern/NNP watches/VBZ us/PRP all/DT night/NN
+- Jack-o-lantern/JJ -> NNP
+- watches/NNS -> VBZ
+grandpa/NN gives/VBZ the/DT Jack-o-lantern/NNP his/PRP$ snag-toothed/JJ grin/NN
+- Jack-o-lantern/JJ -> NNP
+kite/NN string/NN tightly/RB rolled/VBN first/JJ day/NN of/IN school/NN
+- kite/JJ -> NN
+- string/VBG -> NN
 just/RB moved/VBN the/DT chill/NN of/IN giggles/NNS in/IN the/DT school/NN yard/NN
 monoliths/NNS shaping/VBG the/DT moonlight/NN granite/NN
-moon/NN bright/NN where/WRB a/DT rock/NN fell/VBD away/RB shining/VBG
-strangers/NNS on/IN the/DT city/NN side/NN walks/VBD one/CD has/VBZ his/PRP$ laugh/NN
+moon/NN bright/JJ where/WRB a/DT rock/NN fell/VBD away/RB shining/VBG
+- bright/NN -> JJ
+strangers/NNS on/IN the/DT city/NN side/NN walks/NNS one/CD has/VBZ his/PRP$ laugh/NN
+- walks/VBD -> NNS
 lamplight/NN straightening/VBG the/DT street/NN of/IN narrow/JJ houses/NNS
-approaching/VBG the/DT temple/NN grasses/VBZ rub/VBP the/DT body/NN of/IN a/DT snake/NN
-logging/VBG road/NN cut/NN trees/NNS that/IN never/RB come/VBN to/TO the/DT temple/NN
+approaching/VBG the/DT temple/NN grasses/NNS rub/VBP the/DT body/NN of/IN a/DT snake/NN
+- grasses/VBZ -> NNS
+logging/VBG road/NN cut/VBN trees/NNS that/IN never/RB come/VBP to/TO the/DT temple/NN
+- cut/NN -> VBN
+- come/VBN -> VBP
 before/IN the/DT temple/NN lizards/NNS turn/VBP the/DT grass/NN brown/NN
-climbing/VBG temple/NN hill/NN leg/VBZ muscles/NNS tighten/RB in/IN our/PRP$ throats/NNS
-breathless/NN atop/IN the/DT steep/JJ hill/NN temple/NN pagoda/NN
-breathless/NN climbing/VBG to/TO the/DT pagoda/NN wind/NN
-sea/NN winds/NNS blow/VBP from/IN temple/JJ copper/NN domes/VBZ holy/JJ sunshine/NN
-Tibetan/NNP temple/VBD the/DT high-pitched/JJ hum/NN of/IN an/DT air/NN plane/NN
-to/TO our/PRP$ round/JJ eyes/NNS temple/JJ splendors/NNS a/DT locked/JJ gate/NN
-temple/JJ secrets/NNS held/VBD together/RB a/DT chain/NN link/NN fence/NN
-temple/JJ fence/NN red/JJ and/CC yellow/JJ prayer/NN flags/NNS poison/NN ivy/NN
-holy/NN smells/NNS free/JJ in/IN the/DT air/NN between/IN fences/NNS
-temple/JJ dump/NN finding/VBG something/NN we/PRP could/MD see/VB
+climbing/VBG temple/NN hill/NN leg/NN muscles/NNS tighten/VBP in/IN our/PRP$ throats/NNS
+- leg/VBZ -> NN
+- tighten/RB -> VBP
+breathless/JJ atop/IN the/DT steep/JJ hill/NN temple/NN pagoda/NN
+- breathless/NN -> JJ
+breathless/JJ climbing/VBG to/TO the/DT pagoda/NN wind/NN
+- breathless/NN -> JJ
+sea/NN winds/NNS blow/VBP from/IN temple/NN copper/NN domes/NNS holy/JJ sunshine/NN
+- temple/JJ -> NN
+- domes/VBZ -> NNS
+Tibetan/NNP temple/NN the/DT high-pitched/JJ hum/NN of/IN an/DT air/NN plane/NN
+- temple/VBD -> NN
+to/TO our/PRP$ round/JJ eyes/NNS temple/NN splendors/NNS a/DT locked/JJ gate/NN
+- temple/JJ -> NN
+temple/JJ secrets/NNS held/VBN together/RP a/DT chain/NN link/NN fence/NN
+- held/VBD -> VBN
+- together/RB -> RP
+temple/NN fence/NN red/JJ and/CC yellow/JJ prayer/NN flags/NNS poison/NN ivy/NN
+- temple/JJ -> NN
+holy/JJ smells/NNS free/JJ in/IN the/DT air/NN between/IN fences/NNS
+- holy/NN -> JJ
+temple/NN dump/NN finding/VBG something/NN we/PRP could/MD see/VB
+- temple/JJ -> NN
 Sunday/NNP morning/NN light/NN from/IN high/JJ rocks/NNS temples/NNS
 curving/VBG the/DT sky/NN dome/NN temple/NN roof/NN
 making/VBG temples/NNS a/DT full/JJ moon/NN
 timberline/NN granite/NN rocks/NNS outgrowing/VBG the/DT trees/NNS
-an/DT old/JJ woman/NN carrying/VBG a/DT balloon/NN dusk/NN lowers/NNS
+an/DT old/JJ woman/NN carrying/VBG a/DT balloon/NN dusk/NN lowers/VBZ
+- lowers/NNS -> VBZ
 footsteps/NNS a/DT language/NN of/IN cripples/NNS writing/VBG
-death/NN by/IN death/NN with/IN the/DT passing/NN of/IN a/DT friend/NN my/PRP$ own/JJ nears/NNS
-afternoon/NN sun/NN on/IN grandma/NN 's/POS brown/JJ hands/NNS star/VBP wrinkles/NNS
-the/DT stable/JJ roof/NN shingle/NN for/IN shingle/NN coming/VBG down/RP
-Ikebana/NNP centered/VBD around/IN the/DT leaf/NN with/IN worm/NN holes/NNS
+death/NN by/IN death/NN with/IN the/DT passing/NN of/IN a/DT friend/NN my/PRP$ own/JJ nears/VBZ
+- nears/NNS -> VBZ
+afternoon/NN sun/NN on/IN grandma/NN 's/POS brown/JJ hands/NNS star/NN wrinkles/NNS
+- star/VBP -> NN
+the/DT stable/NN roof/NN shingle/NN for/IN shingle/NN coming/VBG down/RP
+- stable/JJ -> NN
+Ikebana/NNP centered/VBN around/IN the/DT leaf/NN with/IN worm/NN holes/NNS
+- centered/VBD -> VBN
 cracked/VBN the/DT antique/JJ china/NN cup/NN fills/VBZ a/DT break/NN in/IN my/PRP$ lifeline/NN
 rented/VBN house/NN wishing/VBG my/PRP$ night/NN gown/NN had/VBD all/DT its/PRP$ buttons/NNS
-autumn/JJ path/NN a/DT stick/JJ talking/VBG to/TO stone/VB the/DT blind/JJ man/NN 's/POS way/NN
+autumn/NN path/NN a/DT stick/NN talking/VBG to/TO stone/NN the/DT blind/JJ man/NN 's/POS way/NN
+- autumn/JJ -> NN
+- stick/JJ -> NN
+- stone/VB -> NN
 moonlighting/VBG the/DT thief/NN employed/VBN as/IN security/NN guard/NN
-petrified/VBN forest/JJS you/PRP buy/VBP a/DT souvenir/NN for/IN your/PRP$ lover/NN
+petrified/VBN forest/NN you/PRP buy/VBP a/DT souvenir/NN for/IN your/PRP$ lover/NN
+- forest/JJS -> NN
 your/PRP$ lies/NNS as/IN many/JJ sizes/NNS of/IN the/DT moon/NN I/PRP should/MD believe/VB ?/.
-heartless/NN the/DT moon/NN 's/POS bright/JJ body/NN attracts/VBZ lovers/NNS
+heartless/JJ the/DT moon/NN 's/POS bright/JJ body/NN attracts/VBZ lovers/NNS
+- heartless/NN -> JJ
 garlic/NN toes/NNS clinging/VBG to/TO his/PRP$ voice/NN the/DT salesman/NN
 prayers/NNS our/PRP$ feet/NNS stuck/VBN in/IN sands/NNS whispering/VBG about/IN us/PRP
 casting/VBG doubts/NNS clouds/NNS on/IN the/DT hills/NNS on/IN her/PRP face/NN
 used/VBN car/NN salesman/NN a/DT banana/NN peel/NN lies/VBZ three/CD feet/NNS from/IN his/PRP$
 after/IN lies/NNS seeing/VBG by/IN moonlight/NN whose/WP$ who/WP is/VBZ what/WP
 cold/JJ crescent/NN moon/NN sound/NN of/IN a/DT boat/NN leaving/VBG with/IN the/DT departed/JJ
-mother/NN 's/POS death/NN the/DT umbilical/JJ cord/NN to/TO earth/VB empty/JJ
+mother/NN 's/POS death/NN the/DT umbilical/JJ cord/NN to/TO earth/NN empty/JJ
+- earth/VB -> NN
 backpack/NN of/IN books/NNS the/DT schoolboy/NN becomes/VBZ a/DT deformed/JJ monster/NN
+****************************************** *******************************************************************
 first/RB day/NN of/IN school/NN her/PRP$ bare/JJ foot/NN tracks/NNS still/RB on/IN the/DT beach/NN
 mid-September/JJ she/PRP writes/VBZ her/PRP$ name/NN for/IN Daddy/NNP in/IN the/DT sand/NN
 where/WRB we/PRP shook/VBD hands/NNS in/IN front/NN of/IN our/PRP$ old/JJ school/NN a/DT dark/NN bruise/NN
