@@ -126,5 +126,3 @@ def poem_generator_for_non_haiku(poem_words):
 
 
     return ret_string
-
-wrap_string_in_html("test.txt", "ft.txt")
