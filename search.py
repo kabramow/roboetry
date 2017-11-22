@@ -1,12 +1,16 @@
 import syllabifier
+import brown_corpus_texts
 from queue import PriorityQueue
 import random
 import math
 import constants
 import nltk
+from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.corpus import stopwords
+from nltk.corpus import brown
+from nltk.util import bigrams
 
-
-def poem_searcher(search_space, p_search_lines):
+def poem_searcher(haiku, search_space, p_search_lines):
     """Returns a 5-7-5 Haiku based off of heuristics
     String, list -> list"""
 
@@ -14,28 +18,37 @@ def poem_searcher(search_space, p_search_lines):
     pass_through = 0
     num_syllables = 5
     search_lines = p_search_lines
+    start_of_line = False #tells us if the word we are picking is the first in a line
+    end_of_line = False #tells us if the word we are picking is the end of the line
     poem = [[], [], []]
 
     # CODE FOR PICKING START WORD (RANDOM)
     # start word must be towards beginning of text
-    first_word_search_space = search_space[:int(len(search_space) / 5)]
-    first_word = random.choice(first_word_search_space)
+    updated_search_space = []
+
+    stopWords = set(stopwords.words('english'))
+
+    for w in search_space:
+        if w not in stopWords:
+            updated_search_space.append(w)
+
+    #Choosing first word -> picked based from first part of text, favor words that have
+    #a lot of potential continuations
+    first_word_search_space = updated_search_space[:int(len(updated_search_space) / 5)]
+    num_next = [(len(haiku.cfd[x]), x) for x in haiku.cfd]
+    sorted_next = sorted(num_next) #list of continuation words
+    first_word = sorted_next[-1][1] #this will be the word with the most continuation words
+    i=1
+    while first_word not in first_word_search_space and constants.PRONUNCIATION_DICT:
+        first_word = sorted_next[-i][1]
+        i+=1
+
     # update the number of syllables left we have to work with
     syll_remaining = num_syllables - syllabifier.get_syllables(first_word)
     # append our chosen word to the corresponding line of our poem
     poem[pass_through].append(first_word)
     # add our first word to the frontier
-    # frontier.put((heuristic(first_word, first_word), first_word))
-    # print('FIRST SEARCH SPACE IS ', first_word_search_space)
-    # print("FIRST WORD IS ", first_word)
-
-    updated_search_space = search_space
-    # UPDATING OUR TEXT - the search space will define what is or is not a neighbor of a word
-    # index_of_first_word = search_space.index(first_word)
-    # print("index is ", index_of_first_word)
-    # updated_search_space = search_space[index_of_first_word+1:]
-    # print("SECOND SEARCH SPACE IS", updated_search_space)
-
+    frontier.put((heuristic(haiku, first_word, first_word, search_lines, start_of_line), first_word))
 
     finished = False
 
@@ -48,53 +61,47 @@ def poem_searcher(search_space, p_search_lines):
         elif pass_through == 0 and syll_remaining == 0:
             syll_remaining = 7
             pass_through = 1
+            start_of_line = True
         # checking if we're done with the second line: if so, we need to start on a new line with 5 syllables
         elif pass_through == 1 and syll_remaining == 0:
             syll_remaining = 5
             pass_through = 2
+            start_of_line = True
+        else:
+            start_of_line = False
+
 
         index_of_current_word = updated_search_space.index(first_word)
+        #We need to reference individual words, but also whole lines to know what position
+        #we are at in the html output. Rather than continually changing between data structures
+        #(i.e. between a regular list and a nested list), we keep track of both cocurrently
+        #so that we may rather reference which ever one we need at the moment
         updated_search_space = updated_search_space[index_of_current_word + 1:]
         search_lines = update_search_lines(search_lines, first_word)
 
-        # debugging - disregard
-        # print("NEW WORD IS: ", first_word)
-        # print("SEARCH LINES: " , search_lines)
-        # print("INDEX IS: ", index_of_current_word)
-        # print("NEW SEARCH SPACE ", updated_search_space)
-        # print("neighbors are: ", get_neighbors_list(first_word, updated_search_space))
-        # print("FRONTIER IS ", frontier.queue)
 
         # UPDATING THE FRONTIER
-        # print("FIRST NEIGHBORS ARE ", get_neighbors_list(first_word, updated_search_space))
         for neighbor in get_neighbors_list(first_word, updated_search_space):
             if neighbor in constants.PRONUNCIATION_DICT and syllabifier.get_syllables(neighbor) <= syll_remaining:
-                # neighbors = all possible words, frontier = usable words
-                frontier.put((heuristic(first_word, neighbor, search_lines), neighbor))
+                # neighbors = all possible words, frontier = usable words, with heuristic values
+                frontier.put((heuristic(haiku, first_word, neighbor, search_lines, start_of_line), neighbor))
 
         if frontier.queue:
             # grab first word in Priority Queue - i.e. WORD WITH LOWEST HEURISTIC
             first_word = sorted(list(frontier.queue))[0][1]
-
-
-
         else:
             break
 
-        # RESET FRONTIER
+        # RESET FRONTIER - the word that we choose eliminates a lot of words currently in the frontier,
+        # so it is easy to remove all and then add again the valid words as the neighbors of the new word
         frontier = PriorityQueue()
         syll_remaining -= syllabifier.get_syllables(first_word)
         poem[pass_through].append(first_word)
-        # print(syll_remaining)
-        # print(poem)
 
     if finished == False:
-        print("POEM FAILED, TRY AGAIN")
+        print("Syllable requirements not met.")
         return poem
-        # this will try again with a different random start word - it should work when we have real heuristics
-        # right now, it will still pick the same words in succession so continually run forever
-        # self.poem_search(search_space, 0)
-        # return ""
+
     return poem
 
 
@@ -118,6 +125,14 @@ def update_search_lines(search_lines, p_word):
     return_lines[0] = return_lines[0][y_to_cut:]
     return return_lines
 
+
+
+def get_neighbors_list(word, list):
+    """returns words following given word
+    string, list -> list"""
+    neighbors = list[0:int(len(list)/3)]
+
+    return neighbors
 
 
 
@@ -154,44 +169,61 @@ def distance_heuristic(word1, word2, search_lines):
 
     if word1 == word2:
         return 5
-    #print("WORD ONE IS ", word1, " ", xpos1, " ", ypos1, " AND WORD TWO IS ", word2, " ", xpos2, " ", ypos2, " AND THE DISTANCE IS ", val)
     val = math.sqrt(math.pow((xpos2 - xpos1), 2) + math.pow((ypos2 - ypos1),2))
     return val
 
 
+def continuation_heuristic(haiku, word1, word2, search, start_of_line):
+    val = 100 #place holder value
 
-def get_neighbors_list(word, list):
-    """returns words following given word
-    string, list -> list"""
-    neighbors = list[0:int(len(list)/2)]
+    #using several corpuses (example texts), pulls words in text that follow
+    #our already chosen word, word1
+    continuation_words = haiku.cfd[word1]
+    lore_words = brown_corpus_texts.lore_cfd[word1]
+    fiction_words = brown_corpus_texts.fiction_cfd[word1]
+    romance_words = brown_corpus_texts.romance_cfd[word1]
+    mystery_words = brown_corpus_texts.mystery_cfd[word1]
+    humor_words = brown_corpus_texts.humor_cfd[word1]
+    sf_words = brown_corpus_texts.sf_cfd[word1]
+    adventure_words = brown_corpus_texts.adventure_cfd[word1]
 
-    return neighbors
+    #If our tentative word, word2, follows word1 in our example texts,
+    #make our heuristic value be the likelihood/probability that word2
+    #follows word1 according to our training texts
+    if word2 in continuation_words:
+        val = haiku.cfd[word1].freq(word2)
+    if word2 in lore_words:
+        val = brown_corpus_texts.lore_cfd[word1].freq(word2)
+    if word2 in fiction_words:
+        val = brown_corpus_texts.fiction_cfd[word1].freq(word2)
+    if word2 in romance_words:
+        val = brown_corpus_texts.romance_cfd[word1].freq(word2)
+    if word2 in mystery_words:
+        val = brown_corpus_texts.mystery_cfd[word1].freq(word2)
+    if word2 in adventure_words:
+        val = brown_corpus_texts.adventure_cfd[word1].freq(word2)
+    if word2 in humor_words:
+        val = brown_corpus_texts.humor_cfd[word1].freq(word2)
+    if word2 in sf_words:
+        val = brown_corpus_texts.sf_cfd[word1].freq(word2)
+
+    #if the word we are choosing is the first of a line, favor words that have a lot of following words
+    """
+    if start_of_line:
+        num_next = [(len(brown_corpus_texts.fiction_cfd[x]), x) for x in brown_corpus_texts.fiction_cfd]
+        sorted_next = sorted(num_next)
+        for pair in sorted_next:
+            if pair[1] == word2:
+                val = pair[0]
+    """
 
 
 
-def random_heuristic(word1, word2):
-    """Not to be used in final submission, basically disregards articles and
-    favors the pattern of short word - long word - short word"""
-    val = 0
-    if word1 == 'a' or word1 == 'and' or word1 == 'the' or word1 == 's' \
-            or word2 == 'a' or word2 == 'and' or word2 == 't' or word2 == 's':
-        val= 5
-    elif len(word1) > len(word2):
-        val= (len(word1) - len(word2)) * -1
-    elif len(word2) > len(word1):
-        val= syllabifier.get_syllables(word2) * -1 - len(word2)
-    else:
-        if word1 == word2:
-            val= 5
-        else:
-            val=-5
     return val
 
-
-
-def heuristic(word1, word2, search):
+def heuristic(haiku, word1, word2, search, start_of_line):
     """combines all heuristics
     string, string -> int"""
     val_1 = distance_heuristic(word1, word2, search)
-    val_2 = random_heuristic(word1, word2)
-    return val_2+val_1
+    val_2 = continuation_heuristic(haiku, word1, word2, search, start_of_line)
+    return val_1*.2+val_2*.8

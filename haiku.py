@@ -7,6 +7,8 @@ import constants
 import syllabifier
 from nltk.corpus import brown
 from nltk.util import bigrams
+from nltk.collocations import *
+
 
 
 
@@ -17,6 +19,7 @@ class Haiku(object):
         file = open(text_file_name, 'r').read()
 
         self.originText = re.sub('[^a-zA-Z0-9\n\.]', ' ', file) #string
+        self.words_in_origin = [w.lower() for w in nltk.word_tokenize(self.originText)]
         self.chosen_lines_list = self.choose_lines_list(selection_length) #list of lists
         self.chosen_lines = self.choose_lines(selection_length) #string
         self.mainText = "" #string
@@ -25,15 +28,17 @@ class Haiku(object):
         self.words_in_chosen_text = [w.lower() for w in nltk.word_tokenize(self.mainText)] #list of words
         self.clean_words = clean_words(self.words_in_chosen_text) #list of words
         self.clean_text = re.sub('[^a-zA-Z]', ' ',self.mainText.replace(constants.FAKE_NEW_LINE, "")) #string
-        self.poem = self.make_poem() #string
+
 
         # CORPUS ATTRIBUTES #
         self.corpus = brown.words(categories=corpus_genre)
         self.lc_corp = [w.lower() for w in self.corpus]
         self.common_bigrams = [(x, y) for (x, y) in bigrams(self.lc_corp)
-                               if x in constants.PRONUNCIATION_DICT and y in constants.PRONUNCIATION_DICT
-                               and x in self.mainText and y in self.mainText]
+                               if x in constants.PRONUNCIATION_DICT and y in constants.PRONUNCIATION_DICT]
         self.cfd = nltk.ConditionalFreqDist(self.common_bigrams)
+
+        self.poem = self.make_poem()  # string
+
 
 
 
@@ -92,7 +97,7 @@ class Haiku(object):
         None -> String"""
         poem_line = ""
         poem=""
-        poem_list = search.poem_searcher(self.clean_words, self.chosen_lines_list)
+        poem_list = search.poem_searcher(self, self.clean_words, self.chosen_lines_list)
         for line in poem_list:
             for word in line:
                 poem_line = poem_line + " " + word
@@ -112,7 +117,3 @@ def clean_words(list_of_words):
     return words
 
 
-h = Haiku("ft.txt")
-#print(h.mainText)
-#print(h.chosen_lines)
-print(h.poem)
