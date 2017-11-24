@@ -67,7 +67,10 @@ def poem_searcher(haiku, search_space, p_search_lines):
     poem[pass_through].append(first_word.word)
 
     # add our first word to the frontier
-    frontier.put((heuristic(haiku, first_word.word, first_word.word, search_lines, start_of_line, poem)-syll, first_word))
+    first_word.h = heuristic(haiku, first_word.word, first_word.word, search_lines, start_of_line, poem)
+    first_word.g = syll #how close we are to the goal = how many syllables we have left
+    first_word.f = first_word.h+first_word.g
+    frontier.put((first_word.f, first_word))
 
     finished = False
 
