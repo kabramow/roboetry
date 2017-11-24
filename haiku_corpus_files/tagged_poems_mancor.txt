@@ -979,14 +979,24 @@ clouds/NNS turning/VBG off/RP the/DT lights/NNS outside/IN the/DT house/NN
 mountain/NN stream/NN afternoon/NN clouds/NNS washed/VBN out/RP to/TO sea/VB
 - washed/VBD -> VBN
 ******************************************************************************************************************
-shy/NN before/IN the/DT moon/NN she/PRP too/RB slips/VBZ behind/IN autumn/NN clouds/NNS
-mountain/NN cold/VBD getting/VBG under/IN a/DT blanket/NN to/TO sleep/VB with/IN me/PRP
-white/JJ fish/JJ fillet/NN the/DT sky/NN fills/VBZ up/RP with/IN cooler/NN air/NN
-after/IN the/DT shower/NN cool/NN wind/NN in/IN the/DT bathrobe/NN hangs/NNS on/IN a/DT nail/NN
+shy/JJ before/IN the/DT moon/NN she/PRP too/RB slips/VBZ behind/IN autumn/NN clouds/NNS
+- shy/NN -> JJ
+mountain/NN cold/JJ getting/VBG under/IN a/DT blanket/NN to/TO sleep/VB with/IN me/PRP
+- cold/VBD -> JJ
+white/JJ fish/NN fillet/NN the/DT sky/NN fills/VBZ up/RP with/IN cooler/JJR air/NN
+- fish/JJ -> NN
+- cooler/NN -> JJR
+after/IN the/DT shower/NN cool/JJ wind/NN in/IN the/DT bathrobe/NN hangs/VBZ on/IN a/DT nail/NN
+- cool/NN -> JJ
+- hangs/NNS -> VBZ
 canyon/NN click/NN nothing/NN on/IN film/NN like/IN the/DT cold/JJ wind/NN
-in/IN the/DT dark/NN of/IN night/NN who/WP would/MD have/VB thought/VBN rain/NN was/VBD round/NN
+in/IN the/DT dark/NN of/IN night/NN who/WP would/MD have/MD thought/VBD rain/NN was/VBD round/NN
+- have/VB -> MD
+- thought/VBN -> VBD
 dark/JJ castle/NN atop/IN the/DT mountain/NN rain/NN clouds/NNS
-one/CD at/IN a/DT time/NN rainclouds/VBZ falling/VBG dark/NN into/IN the/DT sea/NN
+one/CD at/IN a/DT time/NN rainclouds/NNS falling/VBG dark/NN into/IN the/DT sea/NN
+- rainclouds/VBZ -> NNS
+***********************************************************************************************************************
 rainy/NN night/NN the/DT path/NN home/NN a/DT black/JJ umbrella/NN
 the/DT roof/NN leaves/VBZ in/IN a/DT drought/JJ year/NN in/IN the/DT rain/NN gutter/NN
 dusk/NN last/JJ light/JJ caught/NN in/IN tears/NNS
