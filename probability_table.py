@@ -53,3 +53,7 @@ class ProbabilityTable(object):
             if word_prob.word is part_of_speech:
                 return word_prob
         return None
+
+    def following_probability(self, next_word, next_part_of_speech):
+        #TODO
+        pass
