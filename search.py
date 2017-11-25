@@ -11,7 +11,7 @@ def poem_searcher(search_space, p_search_lines):
     String, list -> list"""
 
     frontier = PriorityQueue()
-    pass_through = 0
+    line_number = 0
     num_syllables = 5
     search_lines = p_search_lines
     poem = [[], [], []]
@@ -23,7 +23,7 @@ def poem_searcher(search_space, p_search_lines):
     # update the number of syllables left we have to work with
     syll_remaining = num_syllables - syllabifier.get_syllables(first_word)
     # append our chosen word to the corresponding line of our poem
-    poem[pass_through].append(first_word)
+    poem[line_number].append(first_word)
     # add our first word to the frontier
     # frontier.put((heuristic(first_word, first_word), first_word))
     # print('FIRST SEARCH SPACE IS ', first_word_search_space)
@@ -36,22 +36,21 @@ def poem_searcher(search_space, p_search_lines):
     # updated_search_space = search_space[index_of_first_word+1:]
     # print("SECOND SEARCH SPACE IS", updated_search_space)
 
-
     finished = False
 
     while not finished:
         # checking if we've finished all 3 lines of the haiku
-        if pass_through == 2 and syll_remaining == 0:
+        if line_number == 2 and syll_remaining == 0:
             finished = True
             break
         # checking if we're done with the first line: if so, we need to start on a new line with 7 syllables
-        elif pass_through == 0 and syll_remaining == 0:
+        elif line_number == 0 and syll_remaining == 0:
             syll_remaining = 7
-            pass_through = 1
+            line_number = 1
         # checking if we're done with the second line: if so, we need to start on a new line with 5 syllables
-        elif pass_through == 1 and syll_remaining == 0:
+        elif line_number == 1 and syll_remaining == 0:
             syll_remaining = 5
-            pass_through = 2
+            line_number = 2
 
         index_of_current_word = updated_search_space.index(first_word)
         updated_search_space = updated_search_space[index_of_current_word + 1:]
@@ -76,19 +75,17 @@ def poem_searcher(search_space, p_search_lines):
             # grab first word in Priority Queue - i.e. WORD WITH LOWEST HEURISTIC
             first_word = sorted(list(frontier.queue))[0][1]
 
-
-
         else:
             break
 
         # RESET FRONTIER
         frontier = PriorityQueue()
         syll_remaining -= syllabifier.get_syllables(first_word)
-        poem[pass_through].append(first_word)
+        poem[line_number].append(first_word)
         # print(syll_remaining)
         # print(poem)
 
-    if finished == False:
+    if finished is False:
         print("POEM FAILED, TRY AGAIN")
         return poem
         # this will try again with a different random start word - it should work when we have real heuristics
@@ -96,7 +93,6 @@ def poem_searcher(search_space, p_search_lines):
         # self.poem_search(search_space, 0)
         # return ""
     return poem
-
 
 
 def update_search_lines(search_lines, p_word):
@@ -111,14 +107,12 @@ def update_search_lines(search_lines, p_word):
                 index_to_cut = row_count
                 break
         row_count += 1
-        if index_to_cut != None:
+        if index_to_cut is not None:
             break
 
     return_lines = search_lines[index_to_cut:]
     return_lines[0] = return_lines[0][y_to_cut:]
     return return_lines
-
-
 
 
 def distance_heuristic(word1, word2, search_lines):
@@ -138,8 +132,8 @@ def distance_heuristic(word1, word2, search_lines):
                 xpos1 = row_count1
                 ypos1 = row.index(word)
                 break
-        row_count1+=1
-        if xpos1 != None and ypos1 != None:
+        row_count1 += 1
+        if xpos1 is not None and ypos1 is not None:
             break
 
     for row in search_lines:
@@ -149,24 +143,23 @@ def distance_heuristic(word1, word2, search_lines):
                 ypos2 = row.index(word)
                 break
         row_count2+=1
-        if xpos2 != None and ypos2 != None:
+        if xpos2 is not None and ypos2 is not None:
             break
 
     if word1 == word2:
         return 5
-    #print("WORD ONE IS ", word1, " ", xpos1, " ", ypos1, " AND WORD TWO IS ", word2, " ", xpos2, " ", ypos2, " AND THE DISTANCE IS ", val)
+    # print("WORD ONE IS ", word1, " ", x pos1, " ", y pos1, " AND WORD TWO IS ", word2, " ", x pos2, " ", y pos2, 
+    # " AND THE DISTANCE IS ", val)
     val = math.sqrt(math.pow((xpos2 - xpos1), 2) + math.pow((ypos2 - ypos1),2))
     return val
 
 
-
-def get_neighbors_list(word, list):
+def get_neighbors_list(word, ls):
     """returns words following given word
     string, list -> list"""
-    neighbors = list[0:int(len(list)/2)]
+    neighbors = ls[0:int(len(ls)/2)]
 
     return neighbors
-
 
 
 def random_heuristic(word1, word2):
@@ -175,23 +168,23 @@ def random_heuristic(word1, word2):
     val = 0
     if word1 == 'a' or word1 == 'and' or word1 == 'the' or word1 == 's' \
             or word2 == 'a' or word2 == 'and' or word2 == 't' or word2 == 's':
-        val= 5
+        val = 5
     elif len(word1) > len(word2):
-        val= (len(word1) - len(word2)) * -1
+        val = (len(word1) - len(word2)) * -1
     elif len(word2) > len(word1):
-        val= syllabifier.get_syllables(word2) * -1 - len(word2)
+        val = syllabifier.get_syllables(word2) * -1 - len(word2)
     else:
         if word1 == word2:
-            val= 5
+            val = 5
         else:
-            val=-5
+            val = -5
     return val
-
 
 
 def heuristic(word1, word2, search):
     """combines all heuristics
     string, string -> int"""
     val_1 = distance_heuristic(word1, word2, search)
+    #sprint("Distance heuristic yields " + str(val_1))
     val_2 = random_heuristic(word1, word2)
     return val_2+val_1
