@@ -4,6 +4,9 @@ import random
 import math
 import constants
 import nltk
+import word_probability as wp
+import pos_probability as pp
+import following_word as fw
 
 
 def poem_searcher(search_space, p_search_lines):
@@ -181,10 +184,35 @@ def random_heuristic(word1, word2):
     return val
 
 
+def grammar_heuristic(word1, word2):
+    # if first word is in training corpus return probability that second word comes after it
+    # if second word in training corpus data
+    prob_table = constants.PROBABILITY_TABLE
+    word_prob = prob_table.find_word(word1)
+    if word_prob is not None:
+        following_word = wp.WordProbability.contains_following_word(word_prob, word2)
+        if following_word is not None:
+            return fw.FollowingWord.probability_following_word(following_word, word_prob.word_count)*100
+        else:
+            # find part of speech of word2
+            word2_pos = nltk.pos_tag(word2)[0][1]
+            return wp.WordProbability.part_of_speech_prob(word_prob, word2_pos)*20
+    else:
+        word1_pos = nltk.pos_tag(word1)[0][1]
+        word2_pos = nltk.pos_tag(word2)[0][1]
+        pos_prob = prob_table.find_part_of_speech(word1_pos)
+        if pos_prob is not None:
+            return pp.POSProbability.following_pos_probability(pos_prob, word2_pos)*10
+        else:
+            return 0
+
+
 def heuristic(word1, word2, search):
     """combines all heuristics
     string, string -> int"""
     val_1 = distance_heuristic(word1, word2, search)
-    #sprint("Distance heuristic yields " + str(val_1))
-    val_2 = random_heuristic(word1, word2)
-    return val_2+val_1
+    print("Distance heuristic yields " + str(val_1))
+     #val_2 = random_heuristic(word1, word2)
+    val_2 = grammar_heuristic(word1, word2)
+    print("Grammar heuristic yields" + str(val_2))
+    return val_2#+val_1

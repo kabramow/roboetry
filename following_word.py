@@ -23,3 +23,6 @@ class FollowingWord(object):
         else:
             self.prob_dict[current_part_of_speech] = {}
             self.prob_dict[current_part_of_speech][next_part_of_speech] = 1
+
+    def probability_following_word(self, total_count_current_word):
+        return (self.word_count*1.0)/total_count_current_word

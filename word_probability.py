@@ -13,7 +13,7 @@ class WordProbability(object):
 
     def add_new_instance(self, current_part_of_speech, next_word, next_part_of_speech):
         # add 1 to total instances of word
-        self.word_count += 1
+        # self.word_count += 1
         # update prob dictionary
         self.update_prob_dictionary(current_part_of_speech)
         # check if next word is in following words list
@@ -39,3 +39,10 @@ class WordProbability(object):
             self.prob_dict[part_of_speech] += 1
         else:
             self.prob_dict[part_of_speech] = 1
+
+    # return probability of a part of speech following a word
+    def part_of_speech_prob(self, part_of_speech):
+        if part_of_speech in self.prob_dict:
+            return self.prob_dict[part_of_speech]/self.word_count
+        else:
+            return 0
