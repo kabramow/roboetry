@@ -7735,138 +7735,215 @@ storm/NN clouds/NNS forcing/VBG the/DT sun/NN to/TO set/VB far/RB out/RB to/TO s
 night/NN storm/NN at/IN sea/NN dark/JJ things/NNS move/VBP closer/RBR
 - move/NN -> VBP
 - closer/NN -> RBR
-!!!!!!!!!!!!!!!!!!!
 winter/NN storms/NNS wrapping/VBG around/IN the/DT house/NN the/DT ocean/NN 's/POS roar/NN
-storm/NN sails/NNS cloud/NN evening/NN skies/NNS eyes/NNS
-winter/NN sun/NN coming/VBG in/IN late/JJ for/IN breakfast/NN
+storm/NN sails/NNS cloud/VBP evening/NN skies/NNS eyes/NNS
+- cloud/NN -> VBP
+winter/NN sun/NN coming/VBG in/RP late/JJ for/IN breakfast/NN
+- in/IN -> RP
 low/JJ winter/NN sun/NN covered/VBN with/IN one/CD wave/NN leaping/VBG on/IN the/DT beach/NN
 low/JJ winter/NN sun/NN walking/VBG the/DT length/NN of/IN the/DT rock/NN 's/POS shadow/NN
-mid-winter/NN 's/POS day/NN the/DT sun/NN and/CC moon/NN combine/NN warmth/NN
+mid-winter/NN 's/POS day/NN the/DT sun/NN and/CC moon/NN combine/VBP warmth/NN
+- combine/NN -> VBP
 mid-winter/NN 's/POS sun/NN breaking/VBG the/DT ice/NN in/IN a/DT rain/NN barrel/NN
 in/IN her/PRP$ fevered/JJ brain/NN the/DT patterns/NNS in/IN the/DT quilt/NN solid/JJ blocks/NNS of/IN light/NN
-winter/NN cold/JJ snowdrifts/NNS of/IN damp/NN tissues/NNS
-- cold/NN -> JJ
+winter/NN cold/NN snowdrifts/NNS of/IN damp/JJ tissues/NNS
+- damp/NN -> JJ
 coughing/VBG the/DT sky/NN fills/VBZ with/IN flakes/NNS of/IN hard/JJ snow/NN
 for/IN grandma/NN with/IN love/NN at/IN Christmas/NNP -/: the/DT flu/NN -/:
-sickroom/NN feeling/NN the/DT fake/NN formica/NN flooring/VBG
-ears/NNS open/VBP the/DT soul/NN follows/VBZ the/DT pain/NN
+sickroom/NN feeling/VBG the/DT fake/JJ formica/NN flooring/NN
+- feeling/NN -> VBG
+- fake/NN -> JJ
+- flooring/VBG -> NN
+ears/NNS open/VBN the/DT soul/NN follows/VBZ the/DT pain/NN
+- open/VBP -> VBN
 to/TO smell/VB a/DT splinter/NN long/RB under/IN the/DT skin/NN my/PRP$ little/JJ finger/NN
-rain/NN predicted/VBD calling/VBG the/DT doctor/NN for/IN an/DT appointment/NN
+rain/NN predicted/VBN calling/VBG the/DT doctor/NN for/IN an/DT appointment/NN
+- predicted/VBD -> VBN
 a/DT confused/JJ brain/NN unscrambling/VBG the/DT diagnosis/NN renal/JJ failure/NN
 at/IN your/PRP$ side/NN the/DT huge/JJ bandage/NN without/IN comment/NN
-in/IN the/DT hospital/NN your/PRP$ house/NN slippers/NNS scuffed/VBP by/IN our/PRP$ floors/NNS
-after/IN the/DT injection/NN you/PRP smile/VBP at/IN my/PRP$ story/NN and/CC sleep/VB
-migraine/NN sitting/VBG in/IN a/DT canyon/NN on/IN a/DT split/NN rock/NN
+in/IN the/DT hospital/NN your/PRP$ house/NN slippers/NNS scuffed/VBN by/IN our/PRP$ floors/NNS
+- scuffed/VBP -> VBN
+after/IN the/DT injection/NN you/PRP smile/VBP at/IN my/PRP$ story/NN and/CC sleep/VBP
+- sleep/VB -> VBP
+migraine/NN sitting/VBG in/IN a/DT canyon/NN on/IN a/DT split/VBN rock/NN
+- split/NN -> VBN
 recuperating/VBG all/PDT the/DT electricity/NN back/RB in/IN the/DT lamp/NN
 care/NN full/JJ folding/VBG the/DT new/JJ stitches/NNS into/IN a/DT chair/NN
 a/DT fuzzy/JJ bicycle/NN straddling/VBG my/PRP$ nose/NN bifocals/NNS
-new/JJ reading/NN glasses/NNS a/DT black/JJ blur/NN crosses/VBZ the/DT threshold/NN
+new/JJ reading/VBG glasses/NNS a/DT black/JJ blur/NN crosses/VBZ the/DT threshold/NN
+- reading/NN -> VBG
 a/DT poultice/NN on/IN my/PRP$ shoulder/NN dreams/NNS of/IN haymaking/VBG
-two/CD days/NNS separated/VBN by/IN the/DT sameness/NN a/DT broken/JJ bone/NN
+two/CD days/NNS separated/VBN by/IN the/DT sameness/NN a/DT broken/VBN bone/NN
+- broken/JJ -> VBN
 cast/NN in/IN plaster/NN throbbing/VBG
-only/RB the/DT candle/NN reads/NNS my/PRP$ poems/NNS wavers/NNS in/IN the/DT wind/NN
+only/RB the/DT candle/NN reads/VBZ my/PRP$ poems/NNS wavers/NNS in/IN the/DT wind/NN
+- reads/NNS -> VBZ
 in/IN my/PRP$ chair/NN listening/VBG to/TO my/PRP$ music/NN a/DT stranger/NN
 silence/NN so/RB profound/JJ it/PRP takes/VBZ the/DT shape/NN of/IN your/PRP$ inner/JJ ear/NN
 isolated/JJ farms/NNS the/DT white/JJ sky/NN of/IN snowdrifts/NNS outlining/VBG the/DT cold/NN
-fog/NN closing/VBG the/DT brushwood/NN gate/NN silences/NNS ocean/VBP waves/NNS
-leaving/VBG a/DT book/NN blind/IN hands/NNS touch/JJ her/PRP$ own/JJ smile/NN
-window/NN a/DT filter/NN of/IN snow/NN winter/NN blind/NN
-stairs/NNS where/WRB no/DT one/CD speaks/NN or/CC rises/NNS
+fog/NN closing/VBG the/DT brushwood/NN gate/NN silences/VBZ ocean/NN waves/NNS
+- silences/NNS -> VBZ
+- ocean/VBP -> NN
+leaving/VBG a/DT book/NN blind/JJ hands/NNS touch/VBP her/PRP$ own/JJ smile/NN
+- blind/IN -> JJ
+- touch/JJ -> VBP
+window/NN a/DT filter/NN of/IN snow/NN winter/NN blind/JJ
+- blind/NN -> JJ
+stairs/NNS where/WRB no/DT one/CD speaks/VBZ or/CC rises/VBZ
+- speaks/NN -> VBZ
+- rises/NNS -> VBZ
 alone/RB again/RB with/IN the/DT wind/NN in/IN the/DT pines/NNS somewhere/RB else/RB
-gone/VBN -/: yet/RB the/DT space/NN you/PRP left/VBD shines/NNS with/IN light/NN
+gone/VBN -/: yet/RB the/DT space/NN you/PRP left/VBD shines/VBZ with/IN light/NN
+- shines/NNS -> VBZ
 alone/RB building/VBG a/DT fire/NN for/IN company/NN
 alone/RB in/IN the/DT fire/NN voices/NNS
 a/DT strange/JJ land/NN saying/VBG I/PRP love/VBP you/PRP again/RB
-the/DT wind/NN dies/NNS the/DT sound/NN in/IN one/CD 's/POS own/JJ ears/NNS empty/JJ
-enjoying/VBG life/NN for/IN all/PDT the/DT dead/JJ the/DT yet/RB unborn/JJ
-his/PRP$ face/NN aglow/NN the/DT deaf/NN child/NN making/VBG signs/NNS
+the/DT wind/NN dies/VBZ the/DT sound/NN in/IN one/CD 's/POS own/JJ ears/NNS empty/JJ
+- dies/NNS -> VBZ
+enjoying/VBG life/NN for/IN all/PDT the/DT dead/JJ the/DT yet/RB unborn/VBN
+- unborn/JJ -> VBN
+his/PRP$ face/NN aglow/JJ the/DT deaf/JJ child/NN making/VBG signs/NNS
+- aglow/NN -> JJ
+- deaf/NN -> JJ
 touching/VBG me/PRP during/IN the/DT ballet/NN his/PRP$ left/JJ hand/NN
-winter/NN madness/NN parachuting/VBG to/TO earth/VB pale/JJ blue/JJ creatures/NNS dangle/VBP
+winter/NN madness/NN parachuting/VBG to/TO earth/NN pale/JJ blue/JJ creatures/NNS dangle/VBP
+- earth/VB -> NN
 - blue/NN -> JJ
- written/VBN in/IN a/DT dream/NN all/DT three/CD lives/NNS
+written/VBN in/IN a/DT dream/NN all/DT three/CD lives/NNS now/RB forgotten/VBN
 boxlike/NN silence/NN after/IN the/DT grandparents/NNS leave/VBP empty/JJ rooms/NNS
- a/DT chalk/NN drawing/VBG a/DT piece/NN of/IN amber/NN
+a/DT chalk/NN drawing/NN a/DT piece/NN of/IN amber/NN very/RB near/RB pain/NN
+- drawing/VBG -> NN
 in/IN my/PRP$ ear/NN hurtful/JJ blood/NN sounds/NNS of/IN the/DT sea/NN
 your/PRP$ words/NNS the/DT wind/NN rubs/VBZ the/DT lake/NN the/DT wrong/JJ way/NN
-filling/VBG the/DT bay/NN an/DT incoming/NN tide/NN of/IN sunshine/NN
+filling/VBG the/DT bay/NN an/DT incoming/VBG tide/NN of/IN sunshine/NN
+- incoming/NN -> VBG
 silence/NN in/IN a/DT rain/NN shower/NN sunshine/NN
-in/IN spring/NN sunshine/NN around/IN the/DT granite/JJ stones/NNS spaces/NNS green/JJ
+in/IN spring/NN sunshine/NN around/IN the/DT granite/NN stones/NNS spaces/NNS green/JJ
+- granite/JJ -> NN
 sunlight/NN in/IN a/DT slurp/NN of/IN coffee/NN Sunday/NNP morning/NN
-on/IN the/DT far/RB ridge/NN an/DT arch/NN of/IN fire/NN burns/NNS into/IN Sunday/NNP
-morning/NN sun/NN creeping/VBG from/IN up/IN to/TO down/VB in/IN the/DT sleeping/NN holes/NNS
-sunrise/NN coming/VBG thru/PDT the/DT mountain/NN pass/NN a/DT yellow/JJ line/NN
+on/IN the/DT far/JJ ridge/NN an/DT arch/NN of/IN fire/NN burns/VBZ into/IN Sunday/NNP
+- far/RB -> JJ
+- burns/NNS -> VBZ
+morning/NN sun/NN creeping/VBG from/IN up/NN to/TO down/NN in/IN the/DT sleeping/VBG holes/NNS
+- up/IN -> NN
+- down/VB -> NN
+- sleeping/NN -> VBG
+sunrise/NN coming/VBG thru/IN the/DT mountain/NN pass/NN a/DT yellow/JJ line/NN
+- thru/PDT -> IN
 ocean/NN sunrise/NN the/DT colors/NNS of/IN a/DT grandson/NN running/VBG on/IN the/DT beach/NN
 - ocean/JJ -> NN
 sunrise/NN slipping/VBG into/IN view/NN bird/NN songs/NNS
-the/DT sun/NN rises/NNS petting/VBG a/DT yellow/JJ cat/NN with/IN warmth/NN
-walking/VBG east/NN drawn/NN to/TO that/DT place/NN the/DT sun/NN rises/NNS
+the/DT sun/NN rises/VBZ petting/VBG a/DT yellow/JJ cat/NN with/IN warmth/NN
+- rises/NNS -> VBZ
+walking/VBG east/NN drawn/VBN to/TO that/DT place/NN the/DT sun/NN rises/VBZ
+- drawn/NN -> VBN
+- rises/NNS -> VBZ
 sun/NNS rise/NN giving/VBG me/PRP a/DT new/JJ name/NN and/CC a/DT shadow/NN
-first/RB day/NN of/IN spring/NN on/IN the/DT calendar/NN by/IN the/DT snowy/NN window/NN
-rising/VBG from/IN earth/NN the/DT spring/NN equinox/NN moon/NN grows/NNS round/NN
-desert/JJ springs/NNS hot/JJ tub/NN the/DT canyon/NN rim/NN warms/NNS with/IN spring/NN 's/POS first/JJ dawn/NN
+first/JJ day/NN of/IN spring/NN on/IN the/DT calendar/NN by/IN the/DT snowy/JJ window/NN
+- first/RB -> JJ
+- snowy/NN -> JJ
+rising/VBG from/IN earth/NN the/DT spring/NN equinox/NN moon/NN grows/VBZ round/RB
+- grows/NNS -> VBZ
+- round/NN -> RB
+desert/NN springs/NNS hot/JJ tub/NN the/DT canyon/NN rim/NN warms/VBZ with/IN spring/NN 's/POS first/JJ dawn/NN
+- desert/JJ -> NN
+- warms/NNS -> VBZ
 spring/NN equinox/NN fitting/VBG into/IN winter/NN a/DT saucer/NN and/CC cup/NN
-double/JJ helix/NN earth/NN hangs/NNS in/IN a/DT woven/JJ net/NN
+double/JJ helix/NN earth/NN hangs/VBZ in/IN a/DT woven/VBN net/NN
+- hangs/NNS -> VBZ
+- woven/JJ -> VBN
 coming/VBG inside/RB spring/NN wind/NN has/VBZ filled/VBN my/PRP$ pockets/NNS with/IN cold/NN
 wind/NN rubbing/VBG the/DT lake/NN the/DT wrong/JJ way/NN
-sea/NN winds/NNS smells/NNS diluted/VBN by/IN distance/NN flow/NN thin/NN as/IN light/NN
+sea/NN winds/NNS smells/NNS diluted/VBN by/IN distance/NN flow/VBP thin/RB as/IN light/NN
+- flow/NN -> VBP
+- thin/NN -> RB
 lace/NN curtains/NNS whipped/VBN by/IN spring/NN winds/NNS billows/NNS of/IN clouds/NNS
 cloud/NN wind/NN blowing/VBG colors/NNS in/IN and/CC out/IN of/IN the/DT ocean/NN
-smooth/DT seas/NNS upon/IN jagged/VBN shores/NNS the/DT power/NN
+smooth/JJ seas/NNS upon/IN jagged/JJ shores/NNS the/DT power/NN
+- smooth/DT -> JJ
+- jagged/VBN -> JJ
 a/DT love/NN affair/NN building/VBG a/DT fire/NN in/IN a/DT strange/JJ stove/NN
-the/DT new/JJ couple/NN one/CD looks/VBZ upstream/NN the/DT other/JJ down/RP
-dropping/VBG sticks/NNS in/IN the/DT flooded/JJ river/NN their/PRP$ fortune/NN
+the/DT new/JJ couple/NN one/CD looks/VBZ upstream/RB the/DT other/NN down/RP
+- upstream/NN -> RB
+- other/JJ -> NN
+dropping/VBG sticks/NNS in/IN the/DT flooded/VBN river/NN their/PRP$ fortune/NN
+- flooded/JJ -> VBN
 rivers/NNS taking/VBG care/NN of/IN us/PRP small/JJ fishes/NNS
-earth/NN each/DT spot/NN layered/VBD with/IN stories/NNS
+earth/NN each/DT spot/NN layered/VBN with/IN stories/NNS
+- layered/VBD -> VBN
 sunshine/NN on/IN the/DT hobo/NN 's/POS back/NN hitchhiking/VBG
 song/NN from/IN a/DT fence/NN post/NN meadow/NN lark/NN
 the/DT night/NN is/VBZ shortened/VBN by/IN your/PRP$ letters/NNS on/IN the/DT pillow/NN here/RB beside/IN me/PRP
 coming/VBG together/RB your/PRP$ nearness/NN my/PRP$ music/NN
-the/DT road/NN before/IN us/PRP departing/VBG clouds/NNS bright/VBD with/IN a/DT rising/VBG sun/NN
+the/DT road/NN before/IN us/PRP departing/VBG clouds/NNS bright/JJ with/IN a/DT rising/VBG sun/NN
+- bright/VBD -> JJ
 so/RB much/JJ rain/NN this/DT year/NN how/WRB the/DT kids/NNS have/VB grown/VBN
-turning/VBG green/JJ each/DT wave/NN crests/NNS higher/JJR than/IN the/DT last/JJ
+turning/VBG green/JJ each/DT wave/NN crests/VBZ higher/RBR than/IN the/DT last/JJ
+- crests/NNS -> VBZ
+- higher/JJR -> RBR
 thunder/NN his/PRP$ first/JJ date/NN not/RB hers/NNS
 spring/NN rain/NN your/PRP$ gentleness/NN seems/VBZ to/TO know/VB no/DT sorrow/NN
-to/TO off-shore/NN rocks/NNS spring/NN comes/VBZ rowing/VBG lovers/NNS in/IN a/DT boat/NN
+to/TO off-shore/JJ rocks/NNS spring/NN comes/VBZ rowing/VBG lovers/NNS in/IN a/DT boat/NN
+- off-shore/NN -> JJ
 parents/NNS showing/VBG the/DT newborn/NN to/TO the/DT rising/VBG sun/NN
-lips/NNS take/NN from/IN the/DT springs/NNS whistling/VBG
-cut/NN crystal/NN rainbow/NN shining/VBG where/WRB he/PRP wanted/VBD to/TO touch/VB her/PRP$
+lips/NNS take/VBP from/IN the/DT springs/NNS whistling/VBG
+- take/NN -> VBP
+cut/VBN crystal/NN rainbow/NN shining/VBG where/WRB he/PRP wanted/VBD to/TO touch/VB her/PRP$
+- cut/NN -> VBN
 a/DT brick/NN wall/NN splintered/VBN by/IN frost/NN back/RB to/TO the/DT earth/NN
-orange/NN winter/NN windows/NNS beginning/VBG to/TO dream/VB night/NN fears/NNS awaken/VBP
-riverstone/NN house/NN water/NN pushes/NNS snow/VBP drifts/NNS into/IN walls/NNS
-river-rock/NN house/NN at/IN night/NN the/DT walls/NNS a/DT babbling/NN brook/NN
-city/NN walls/NNS of/IN no/DT one/NN sunless/NN dark/NN
-noises/NNS the/DT mossy/NN parts/NNS of/IN a/DT waterfall/NN
-snow/NN pond/NN Yosemite/JJ spring/NN time/NN a/DT waterfalling/NN
+orange/JJ winter/NN windows/NNS beginning/VBG to/TO dream/VB night/NN fears/NNS awaken/VBP
+- orange/NN -> JJ
+riverstone/NN house/NN water/NN pushes/VBZ snow/NN drifts/NNS into/IN walls/NNS
+- pushes/NNS -> VBZ
+- snow/VBP -> NN
+river-rock/NN house/NN at/IN night/NN the/DT walls/NNS a/DT babbling/VBG brook/NN
+- babbling/NN - VBG
+city/NN walls/NNS of/IN no/DT one/NN sunless/JJ dark/NN
+- sunless/NN -> JJ
+noises/NNS the/DT mossy/JJ parts/NNS of/IN a/DT waterfall/NN
+- mossy/NN -> JJ
+snow/NN pond/NN Yosemite/NNP spring/NN time/NN a/DT waterfalling/NN
 - snow/JJ -> NN
+- Yosemite/JJ -> NNP
 falling/VBG into/IN water/NN smoke/NN snow/NN melt/NN
 rocks/NNS bending/VBG sound/JJ paths/NNS of/IN the/DT waterfall/NN
 from/IN living/VBG rock/NN the/DT purity/NN of/IN snow/NN waterrise/NN
-sunshine/NN pouring/VBG down/RP the/DT canyon/NN wall/NN snow-melt/NN waterfall/NN
-upward/RB spiral/NN wind/NN pushed/VBD the/DT waterfall/NN into/IN a/DT cloud/NN
+sunshine/NN pouring/VBG down/RB the/DT canyon/NN wall/NN snow-melt/NN waterfall/NN
+- down/RP -> RB
+upward/JJ spiral/NN wind/NN pushed/VBD the/DT waterfall/NN into/IN a/DT cloud/NN
+- upward/RB -> JJ
 sunshine/NN carves/VBZ the/DT rock/NN snow-melt/NN waterfall/NN
 moving/VBG up/RP in/IN the/DT falling/VBG rain/NN our/PRP$ empty/JJ well/NN
-sunset/NN stumbling/VBG over/RP rocks/NNS shadows/NNS
+sunset/NN stumbling/VBG over/IN rocks/NNS shadows/NNS
+- over/RP -> IN
 sunset/NN all/PDT the/DT shadows/NNS home/NN
 sunset/NN leaving/VBG to/TO the/DT wind/NN bare/JJ rocks/NNS
 - bare/NN -> JJ
 sunsets/NNS blue/JJ clouds/NN as/IN land/NN into/IN pink/JJ seas/NNS
 - pink/NN -> JJ
 sunset/NN all/PDT the/DT shadows/NNS going/VBG home/NN
-night/NN 's/POS warmth/NN sucked/VBN into/IN the/DT sea/NN a/DT sinking/NN sun/NN
+night/NN 's/POS warmth/NN sucked/VBN into/IN the/DT sea/NN a/DT sinking/VBG sun/NN
+- sinking/NN -> VBG
 ocean/NN sunset/NN staying/VBG by/IN the/DT window/NN 'till/MD the/DT color/NN sinks/VBZ
 - ocean/JJ -> NN
 - sinks/NNS -> VBZ
-winter/NN twilight/NN gathers/NNS in/IN her/PRP$ lap/NN white/JJ folded/VBD hands/NNS
-blue/JJ desert/NN wind/NN pushes/NNS the/DT hills/NNS '/POS shadow/NN the/DT long/JJ walk/NN home/NN
+winter/NN twilight/NN gathers/VBZ in/IN her/PRP$ lap/NN white/JJ folded/VBN hands/NNS
+- gathers/NNS -> VBZ
+- folded/VBD -> VBN
+blue/JJ desert/NN wind/NN pushes/VBZ the/DT hills/NNS '/POS shadow/NN the/DT long/JJ walk/NN home/NN
+- pushes/NNS -> VBZ
 ocean/NN twilight/NN as/IN final/JJ as/IN the/DT last/JJ one/NN
 alkali/NN flats/NNS in/IN the/DT twilight/NN of/IN evening/NN snow/NN white/JJ
 - evening/VBG -> NN
 - snow/JJ -> NN
-the/DT rain-filled/JJ wind/NN blowing/VBG away/RB the/DT word/NN a/DT damp/JJ newspaper/NN
+the/DT rain-filled/JJ wind/NN blowing/VBG away/RP the/DT word/NN a/DT damp/JJ newspaper/NN
+- away/RB -> RP
 wind/NN being/VBG massaged/VBN by/IN wind/NN chimes/NNS
 from/IN far/RB at/IN sea/NN waves/NNS bring/VBP without/IN wind/NN that/DT sound/NN
-winter/NN wind/NN a/DT red/JJ flag/NN waves/NNS to/TO the/DT whiteness/NN
-rock/NN music/NN the/DT beach/NN house/NN shaken/NN by/IN howling/VBG winds/NNS
+winter/NN wind/NN a/DT red/JJ flag/NN waves/VBZ to/TO the/DT whiteness/NN
+- waves/NNS -> VBZ
+rock/NN music/NN the/DT beach/NN house/NN shaken/VBN by/IN howling/VBG winds/NNS
+- shaken/NN -> VBN
 wind/NN finding/VBG dark/JJ places/NNS in/IN cliffs/NNS for/IN the/DT night/NN
 sea/NN winds/NNS not/RB believing/VBG in/IN the/DT silence/NN
 wind/NN from/IN the/DT mouth/NN of/IN something/NN dark/JJ
@@ -7875,178 +7952,281 @@ a/DT blanket/NN of/IN wind/NN wrapping/VBG around/IN the/DT house/NN ocean/NN co
 - ocean/JJ -> NN
 sea/NN foam/NN pulling/VBG storm/NN winds/NNS across/IN the/DT beach/NN
 night/NN winds/NNS touching/VBG crested/VBN waves/NNS with/IN frost/NN
-wind/NN tears/NNS smoke/NN from/IN the/DT chimney/NN snow/NN flakes/NNS
-blue/JJ tin/NN cup/NN the/DT burn/NN on/IN a/DT finger/NN blistering/NN
-steady/JJ rain/NN the/DT dentist/NN 's/POS drill/NN turning/VBG to/TO snow/VB
-snowing/VBG again/RB a/DT cold/JJ wind/NN bites/NNS the/DT newly/RB capped/VBN tooth/NN
+wind/NN tears/VBZ smoke/NN from/IN the/DT chimney/NN snow/NN flakes/NNS
+- tears/NNS -> VBZ
+blue/JJ tin/NN cup/NN the/DT burn/NN on/IN a/DT finger/NN blistering/VBG
+- blistering/NN -> VBG
+steady/JJ rain/NN the/DT dentist/NN 's/POS drill/NN turning/VBG to/TO snow/NN
+- snow/VB -> NN
+snowing/VBG again/RB a/DT cold/JJ wind/NN bites/VBZ the/DT newly/RB capped/VBN tooth/NN
+- bites/NNS -> VBZ
 junkie/NN veins/NNS holding/VBG a/DT heart/NN above/IN dark/JJ waters/NNS
 - dark/NN -> JJ
 pain/NN a/DT wound/NN without/IN shape/NN cut-away/NN skin/NN
-winter/NN rain/NN the/DT cook/NN eats/VBZ alone/RB in/IN the/DT dining/NN room/NN
+winter/NN rain/NN the/DT cook/NN eats/VBZ alone/RB in/IN the/DT dining/VBG room/NN
+- dining/NN -> VBG
 roof/NN a/DT silent/JJ slice/NN into/IN the/DT sky/NN
-broken/JJ shells/NNS the/DT fishing/NN boat/NN pulled/VBD ashore/RB for/IN winter/NN
-closed/JJ shops/NNS a/DT loose/JJ board/NN bangs/NNS on/IN the/DT winter/NN wind/NN
+broken/JJ shells/NNS the/DT fishing/VBG boat/NN pulled/VBN ashore/RB for/IN winter/NN
+- fishing/NN -> VBG
+- pulled/VBD -> VBN
+closed/JJ shops/NNS a/DT loose/JJ board/NN bangs/VBZ on/IN the/DT winter/NN wind/NN
+- bangs/NNS -> VBZ
 well-tended/JJ gardens/NNS here/RB lies/VBZ the/DT snow/NN especially/RB deep/JJ
-blunt/NN with/IN ice/NN the/DT barge/NN 's/POS bowsprit/NN anchored/VBN fast/NN
+blunt/JJ with/IN ice/NN the/DT barge/NN 's/POS bowsprit/NN anchored/VBN fast/RB
+- blunt/NN -> JJ
+- fast/NN -> RB
 wind/NN bothering/VBG the/DT drapes/NNS of/IN a/DT closed/JJ window/NN
 battery/NN cables/NNS giving/VBG winter/NN 's/POS morning/NN a/DT jump/NN start/NN
-home/NN again/RB my/PRP$ lacy/NN white/JJ pillow/NN ocean/NN surf/NN
+home/NN again/RB my/PRP$ lacy/JJ white/JJ pillow/NN ocean/NN surf/NN
+- lacy/NN -> JJ
 - ocean/JJ -> NN
-unpainted/JJ porch/NN sea/NN fog/NN comes/VBZ to/TO a/DT closed/JJ door/NN
+unpainted/VBN porch/NN sea/NN fog/NN comes/VBZ to/TO a/DT closed/JJ door/NN
+- unpainted/JJ -> VBN
 clearing/VBG his/PRP$ throat/NN the/DT lawyer/NN plays/VBZ with/IN the/DT fob/NN on/IN his/PRP$ watch/NN chain/NN
 light/JJ heart/NN the/DT pressure/NN of/IN writing/VBG with/IN lead/NN pencils/NNS
-ashes/NNS of/IN incense/NN a/DT page/NN of/IN poems/NNS hiding/NN words/NNS
+ashes/NNS of/IN incense/NN a/DT page/NN of/IN poems/NNS hiding/VBZ words/NNS
+- hiding/NN -> VBZ
 before/IN the/DT journey/NN my/PRP$ last/JJ poems/NNS copied/VBN neatly/RB
-another/DT tranquillizer/NN the/DT cat/NN begins/VBZ to/TO purr/VB more/RBR r/NN 's/POS in/IN the/DT room/NN
-winter/NN weaves/NNS a/DT pile/NN of/IN pillows/NNS on/IN a/DT hard/JJ chair/NN
+another/DT tranquillizer/NN the/DT cat/NN begins/VBZ to/TO purr/VB more/RBR r's/NNS in/IN the/DT room/NN
+- r/NN 's/POS -> NNS
+winter/NN weaves/VBZ a/DT pile/NN of/IN pillows/NNS on/IN a/DT hard/JJ chair/NN
+- weaves/NNS -> VBZ
 comforter/NN buttoned/VBN to/TO the/DT bed/NN a/DT curled-up/JJ cat/NN
-curving/VBG waves/NNS sleep/JJ carries/VBZ away/RB candlelight/NN
-packing/VBG arms/NNS of/IN the/DT flannel/NN shirt/NN holding/VBG on/IN to/TO peace/VB
-smoothed/VBN by/IN seas/NNS a/DT nearly/RB round/NN rock/NN points/NNS homeward/NN
+curving/VBG waves/NNS sleep/NN carries/VBZ away/RP candlelight/NN
+- sleep/JJ -> NN
+- away/RB -> RP
+packing/VBG arms/NNS of/IN the/DT flannel/NN shirt/NN holding/VBG on/IN to/TO peace/NN
+- peace/VB -> NN
+smoothed/VBN by/IN seas/NNS a/DT nearly/RB round/JJ rock/NN points/VBZ homeward/NN
+- round/NN -> JJ
+- points/NNS -> VBZ
 home/NN again/RB raking/VBG in/IN the/DT Zen/NNP garden/NN the/DT oldest/JJS pattern/NN
-driftwood/NN hermitage/NN a/DT well-chewed/JJ stick/NN writes/NNS in/IN the/DT sand/NN
-too/RB poor/JJ for/IN a/DT luxury/NN house/NN walking/VBG a/DT deserted/JJ beach/NN
-his/PRP$ crooked/JJ face/NN peering/VBG into/IN a/DT puddle/NN for/IN a/DT dropped/JJ penny/NN
+driftwood/NN hermitage/NN a/DT well-chewed/JJ stick/NN writes/VBZ in/IN the/DT sand/NN
+- writes/NNS -> VBZ
+too/RB poor/JJ for/IN a/DT luxury/JJ house/NN walking/VBG a/DT deserted/VBN beach/NN
+- luxury/NN -> JJ
+- deserted/JJ -> VBN
+his/PRP$ crooked/JJ face/NN peering/VBG into/IN a/DT puddle/NN for/IN a/DT dropped/VBN penny/NN
+- dropped/JJ -> VBN
 silence/NN marked/VBN down/RP half-price/NN the/DT broken/JJ squeak/NN toy/NN
-cloud-covered/JJ a/DT departed/JJ soul/NN sky-blue/JJ
-wind/NN still/RB Grandma/NNP 's/POS afternoon/NN nap/NN lasts/NNS forever/RB
-the/DT string/NN cut/NN in/IN death/NN feet/NNS go/VBP awry/RB walking/VBG labyrinths/NNS
-no/DT !/. the/DT grave/NN is/VBZ not/RB the/DT end/NN we/PRP remember/VBP too/RB much/JJ
+cloud-covered/JJ a/DT departed/VBN soul/NN sky-blue/JJ
+- departed/JJ -> VBN
+wind/NN still/JJ Grandma/NNP 's/POS afternoon/NN nap/NN lasts/VBZ forever/RB
+- still/RB -> JJ
+- lasts/NNS -> VBZ
+the/DT string/NN cut/VBN in/IN death/NN feet/NNS go/VBP awry/RB walking/VBG labyrinths/NNS
+- cut/NN -> VBN
+no/UH !/. the/DT grave/NN is/VBZ not/RB the/DT end/NN we/PRP remember/VBP too/RB much/JJ
+- no/DT -> UH
 twilight/NN finding/VBG in/IN an/DT old/JJ album/NN dad/NN is/VBZ still/RB young/JJ
 opening/VBG her/PRP$ closet/NN secrets/NNS alive/VBP in/IN the/DT colors/NNS she/PRP has/VBZ worn/VBN
 snow/NN pictures/NNS of/IN other/JJ lands/NNS other/JJ lovers/NNS
 winter/NN colors/NNS passing/VBG in/IN sleep/NN dream/NN zones/NNS
 measuring/VBG the/DT box/NN once/RB again/RB inside/IN
-underground/NN the/DT Celtic/NNP cauldron/NN a/DT ringing/NN bell/NN
-winter/NN dreams/NNS lingering/VBG on/IN long/JJ arms/NNS summer/NN warmed/VBD
+underground/NN the/DT Celtic/NNP cauldron/NN a/DT ringing/VBG bell/NN
+- ringing/NN -> VBG
+winter/NN dreams/NNS lingering/VBG on/IN long/JJ arms/NNS summer/NN warmed/VBN
+- warmed/VBD -> VBN
 high/JJ winds/NNS memories/NNS of/IN flight/NN
 stars/NNS bend/VBP down/RP into/IN the/DT wind/NN of/IN whitecaps/NNS morning/NN light/NN
-no/DT trespassing/VBG sign/NN torn/VBN down/RP by/IN spring/NN winds/NNS the/DT open/JJ sky/NN road/NN
-a/DT south/JJ wind/NN ironing/VBG work/NN shirts/NNS on/IN the/DT line/NN at/IN thirty/JJ knots/NNS an/DT hour/NN
+no/RB trespassing/VBG sign/NN torn/VBN down/RP by/IN spring/NN winds/NNS the/DT open/JJ sky/NN road/NN
+- no/DT -> RB
+a/DT south/JJ wind/NN ironing/VBG work/NN shirts/NNS on/IN the/DT line/NN at/IN thirty/CD knots/NNS an/DT hour/NN
+- thirty/JJ -> CD
 warming/VBG her/PRP$ feelings/NNS of/IN love/NN the/DT hot/JJ springs/NNS
-ducks/NNS paddling/VBG around/RP lovers/NNS
-invisible/JJ thrusting/NN the/DT mountain/NN raises/NNS all/DT of/IN us/PRP
-flooded/VBN river/NN rubbing/VBG low/JJ skies/NNS electric/JJ current/JJ
+ducks/NNS paddling/VBG around/IN lovers/NNS
+- around/RP -> IN
+invisible/JJ thrusting/VBG the/DT mountain/NN raises/VBZ all/DT of/IN us/PRP
+- thrusting/NN -> VBG
+- raises/NNS -> VBZ
+flooded/VBN river/NN rubbing/VBG low/JJ skies/NNS electric/JJ current/NN
+- current/JJ -> NN
 a/DT woman/NN 's/POS slit/NN sliding/VBG over/IN granite/NN a/DT spring/NN
 spring/NN the/DT urge/NN to/TO scratch/VB the/DT earth/NN with/IN a/DT hoe/NN
-treasured/VBN gift/NN her/PRP$ smooth/JJ stone/NN calls/NNS as/IN the/DT phone/NN rings/NNS
-gentle/JJ breathing/NN night/NN rain/NN comes/VBZ alive/JJ tapping/VBG on/IN the/DT window/NN
-society/NN dame/NN flirts/NNS with/IN an/DT unreal/JJ cowboy/NN her/PRP$ teenage/NN romance/NN
-dawn/NN 's/POS faint/JJ hour/NN awakens/NNS under/IN closed/JJ eyes/NNS a/DT shiver/NN of/IN pictures/NNS
+treasured/VBN gift/NN her/PRP$ smooth/JJ stone/NN calls/VBZ as/IN the/DT phone/NN rings/VBZ
+- calls/NNS -> VBZ
+- rings/NNS -> VBZ
+gentle/JJ breathing/NN night/NN rain/NN comes/VBZ alive/RB tapping/VBG on/IN the/DT window/NN
+- alive/JJ -> RB
+society/NN dame/NN flirts/VBZ with/IN an/DT unreal/JJ cowboy/NN her/PRP$ teenage/JJ romance/NN
+- flirts/NNS -> VBZ
+- teenage/NN -> JJ
+dawn/NN 's/POS faint/JJ hour/NN awakens/VBZ under/IN closed/JJ eyes/NNS a/DT shiver/NN of/IN pictures/NNS
 - faint/NN -> JJ
-desiring/VBG you/PRP rain/NN drums/NNS in/IN my/PRP$ ears/NNS
-love/NN duet/NN everyone/NN in/IN the/DT music/NN class/NN crosses/NNS their/PRP$ legs/NNS
+- awakens/NNS -> VBZ
+desiring/VBG you/PRP rain/NN drums/VBZ in/IN my/PRP$ ears/NNS
+- drums/NNS -> VBZ
+love/NN duet/NN everyone/NN in/IN the/DT music/NN class/NN crosses/VBZ their/PRP$ legs/NNS
+- crosses/NNS -> VBZ
 pearl/NN buttons/NNS undoing/VBG her/PRP$ blouse/NN two/CD soft/JJ ones/NNS
-patterns/NNS your/PRP$ words/NNS open/VB the/DT iris/NN
+patterns/NNS your/PRP$ words/NNS open/VBP the/DT iris/NN
+- open/VB -> VBP
 tumbling/VBG surf/NN water/NN voices/NNS of/IN children/NNS within/IN the/DT womb/NN
-heavy/JJ surf/NN that/IN sound/NN I/PRP heard/VBD before/IN being/VBG born/VBN
+heavy/JJ surf/NN that/DT sound/NN I/PRP heard/VBD before/IN being/VBG born/VBN
+- that/IN -> DT
 soft/JJ things/NNS inheriting/VBG a/DT pattern/NN in/IN time/NN
-desert/NN wind/NN naked/VBN as/IN the/DT crack/NN where/WRB I/PRP was/VBD born/VBN
+desert/NN wind/NN naked/JJ as/IN the/DT crack/NN where/WRB I/PRP was/VBD born/VBN
+- naked/VBN -> JJ
 silence/NN baby/NN 's/POS blue/JJ eyes/NNS without/IN tears/NNS
 fingerprints/NNS the/DT tiny/JJ scars/NNS for/IN life/NN
-lying/VBG in/IN your/PRP$ lap/NN the/DT dense/NN smell/NN of/IN musk/NN a/DT birthday/NN gift/NN
+lying/VBG in/IN your/PRP$ lap/NN the/DT dense/JJ smell/NN of/IN musk/NN a/DT birthday/NN gift/NN
+- dense/NN -> JJ
 the/DT poise/NN of/IN coming/VBG forward/RB waves/VBZ on/IN a/DT beach/NN a/DT baby/NN 's/POS first/JJ steps/NNS
-Aeolian/JJ harps/NN rigged/VBN for/IN sailing/VBG snowfields/NNS
+Aeolian/JJ harps/NNS rigged/VBN for/IN sailing/VBG snowfields/NNS
+- harps/NN -> NNS
 tundra/NN wind/NN in/IN an/DT ancient/JJ poet/NN 's/POS ears/NNS followers/NNS '/POS footprints/NNS
 snow/NN lighting/VBG the/DT way/NN of/IN the/DT wind/NN
 across/IN the/DT sea/NN wind/NN blows/VBZ to/TO me/PRP stranger/NN 's/POS snow/NN
 riding/VBG white/JJ roads/NNS before/IN dawn/NN without/IN a/DT steed/NN winds/NNS of/IN winter/NN
-crossing/VBG the/DT bay/NN from/IN island/NN to/TO island/VB winter/NN winds/NNS
-unseen/JJ wind/NN water/NN touching/VBG water/NN with/IN its/PRP$ roar/NN
+crossing/VBG the/DT bay/NN from/IN island/NN to/TO island/NN winter/NN winds/NNS
+- island/VB -> NN
+unseen/VBN wind/NN water/NN touching/VBG water/NN with/IN its/PRP$ roar/NN
+- unseen/JJ -> VBN
 wind/NN tangling/VBG bare/JJ air/NN black/JJ trees/NNS
 - bare/NN -> JJ
-homeward/NN wind/NN pushes/NNS us/PRP across/IN evening/NN shadows/NNS
+homeward/NN wind/NN pushes/VBZ us/PRP across/IN evening/NN shadows/NNS
+- pushes/NNS -> VBZ
 winter/NN wind/NN the/DT smell/NN of/IN french/JJ fries/NNS and/CC cold/JJ grease/NN
-circus/NN time/NN over/IN now/RB it/PRP begins/VBZ to/TO be/VB winter/NN
-leaves/NNS gold/VBP shine/NN holding/VBG bright/NN the/DT wall/NN of/IN winter/NN
+circus/NN time/NN over/JJ now/RB it/PRP begins/VBZ to/TO be/VB winter/NN
+- over/IN -> JJ
+leaves/NNS gold/JJ shine/NN holding/VBG bright/RB the/DT wall/NN of/IN winter/NN
+- gold/VBP -> JJ
+- bright/NN -> RB
 scrape/NN of/IN a/DT spoon/NN in/IN the/DT empty/JJ bowl/NN end/NN of/IN winter/NN
 winter/NN shadows/NNS poems/NNS written/VBN on/IN the/DT back/NN of/IN an/DT electric/JJ bill/NN
 poetry/NN covering/VBG holes/NNS in/IN the/DT wall/NN with/IN a/DT wide/JJ brush/NN
-silence/NN white/JJ paper/NN unmarked/JJ
-ink/NN blot/NN where/WRB haiku/NN sleeps/NNS
+silence/NN white/JJ paper/NN unmarked/VBN
+- unmarked/JJ -> VBN
+ink/NN blot/NN where/WRB haiku/NN sleeps/VBZ
+- sleeps/NNS -> VBZ
 smudging/VBG a/DT page/NN of/IN poems/NNS ashes/NNS
 sleep/NN with/IN the/DT poem/NN written/VBN down/RP
-poetry/NN contest/NN my/PRP$ name/NN misspelled/VBD on/IN the/DT first/JJ line/NN
-rainy/NN weather/NN award/RB propped/VBN on/IN the/DT table/NN sticks/NNS to/TO the/DT sugar/NN bowl/NN
+poetry/NN contest/NN my/PRP$ name/NN misspelled/VBN on/IN the/DT first/JJ line/NN
+- misspelled/VBD -> VBN
+rainy/NN weather/NN award/NN propped/VBN on/IN the/DT table/NN sticks/VBZ to/TO the/DT sugar/NN bowl/NN
+- award/RB -> NN
+- sticks/NNS -> VBZ
 rainy/JJ day/NN poems/NNS on/IN the/DT page/NN water/NN spots/NNS
 pen/NN moving/VBG in/IN the/DT dark/JJ black/JJ ink/NN of/IN clear/JJ images/NNS
 a/DT chain/NN link/NN fence/NN writing/VBG renga/NN in/IN prison/NN holds/VBZ him/PRP together/RB
 beach/NN poems/NNS written/VBN on/IN driftwood/NN with/IN charcoal/NN
 rough/JJ paper/NN snagging/VBG ideas/NNS in/IN black/JJ
-writing/VBG down/RP a/DT poem/NN in/IN that/DT time-space/NN the/DT fire/NN takes/VBZ hold/VBP
-morning/NN 's/POS faint/JJ light/NN seeing/VBG again/RB the/DT words/NNS in/IN the/DT sent/NN letter/NN
+writing/VBG down/RP a/DT poem/NN in/IN that/DT time-space/NN the/DT fire/NN takes/VBZ hold/NN
+- hold/VBP -> NN
+morning/NN 's/POS faint/JJ light/NN seeing/VBG again/RB the/DT words/NNS in/IN the/DT sent/VBN letter/NN
 - faint/NN -> JJ
+- sent/NN -> VBN
 I/PRP touch/VBP myself/PRP with/IN lacquered/VBN nails/NNS as/IN you/PRP once/RB did/VBD
-memories/NNS stored/VBN in/IN our/PRP$ muscles/NNS an/DT iron/NN will/MD
+memories/NNS stored/VBN in/IN our/PRP$ muscles/NNS an/DT iron/NN will/NN
+- will/MD -> NN
 without/IN a/DT shadow/NN on/IN bright/JJ days/NNS the/DT hand/NN I/PRP know/VBP
-mailbox/NN a/DT frozen/JJ puddle/NN overflows/NNS a/DT rejection/NN slip/NN
+mailbox/NN a/DT frozen/JJ puddle/NN overflows/VBZ a/DT rejection/NN slip/NN
+- overflows/NNS -> VBZ
 ebb/NN tide/NN anger/NN and/CC rejection/NN sucked/VBN out/RP to/TO sea/NN
 - sea/VB -> NN
-filled/VBN by/IN the/DT sea/NN the/DT stony/NN places/NNS of/IN hurting/VBG
+filled/VBN by/IN the/DT sea/NN the/DT stony/JJ places/NNS of/IN hurting/VBG
+- stony/NN -> JJ
 all/DT my/PRP$ anger/NN singing/VBG with/IN the/DT vacuum/NN cleaner/NN
 rows/NNS of/IN holes/NNS edging/VBG the/DT stamp/NN of/IN your/PRP$ last/JJ letter/NN
-after/IN our/PRP$ words/NNS on/IN the/DT lace/NN tablecloth/NN cut/NN flowers/NNS
-data/NNS processing/NN her/PRP$ letters/NNS from/IN New/NNP York/NNP in/IN winter/NN
+after/IN our/PRP$ words/NNS on/IN the/DT lace/NN tablecloth/NN cut/VBN flowers/NNS
+- cut/NN -> VBN
+data/NNS processing/VBG her/PRP$ letters/NNS from/IN New/NNP York/NNP in/IN winter/NN
+- processing/NN -> VBG
 gutted/VBN candle/NN if/IN only/RB I/PRP too/RB could/MD sleep/VB
 sea/NN wind/NN searching/VBG me/PRP for/IN something/NN someone/NN I/PRP once/RB was/VBD
-desiring/NN freedom/NN her/PRP$ photos/NN no/RB longer/RBR capture/NN views/NNS
-misty/NN red/JJ daybreak/NN newly/RB lit/JJ fires/NNS in/IN the/DT kitchen/NN wish/NN to/TO be/VB on/IN a/DT train/NN
+desiring/VBG freedom/NN her/PRP$ photos/NNS no/RB longer/RBR capture/VBP views/NNS
+- desiring/NN -> VBG
+- photos/NN -> NNS
+- capture/NN -> VBP
+misty/JJ red/JJ daybreak/NN newly/RB lit/JJ fires/NNS in/IN the/DT kitchen/NN wish/VBP to/TO be/VB on/IN a/DT train/NN
+- misty/NN -> JJ
 - red/VBD -> JJ
-sweet/NN cold/JJ incense/NN in/IN a/DT winter/NN room/NN alone/RB
+- wish/NN -> VBP
+sweet/JJ cold/JJ incense/NN in/IN a/DT winter/NN room/NN alone/RB
+- sweet/NN -> JJ
 - cold/NN -> JJ
-treasure/NN in/IN a/DT seashell/NN serene/NN colors/NNS a/DT day/NN alone/RB
+treasure/NN in/IN a/DT seashell/NN serene/JJ colors/NNS a/DT day/NN alone/RB
+- serene/NN -> JJ
 a/DT roof/NN of/IN rain/NN the/DT sound/NN inside/IN solitude/NN
-silence/NN after/IN you/PRP 've/VBP gone/VBN the/DT widening/NN world/NN
-silence/NN when/WRB all/DT alone/RB a/DT tunnel/NN
+silence/NN after/IN you/PRP 've/VBP gone/VBN the/DT widening/VBG world/NN
+- widening/NN -> VBG
+silence/NN when/WRB all/RB alone/RB a/DT tunnel/NN
+- all/DT -> RB
 a/DT corner/NN the/DT shape/NN of/IN solitude/NN chair/NN and/CC book/NN
-deaf/NN child/NN patterns/NNS of/IN a/DT Persian/JJ rug/NN echoing/VBG
+deaf/JJ child/NN patterns/NNS of/IN a/DT Persian/JJ rug/NN echoing/VBG
+- deaf/NN -> JJ
 winter/NN the/DT hours/NNS melting/VBG into/IN snowflakes/NNS
 this/DT need/NN to/TO love/VB mountains/NNS give/VBP to/TO spring/NN flowers/NNS
 downpour/NN your/PRP$ fingers/NNS inside/IN me/PRP
-sun/NN setting/VBG emerald/NN waves/NNS free/JJ our/PRP$ passion/NN
-illuminated/VBN in/IN the/DT light/NN from/IN the/DT barn/NN their/PRP$ first/JJ kiss/VB
+sun/NN setting/VBG emerald/NN waves/NNS free/RN our/PRP$ passion/NN
+- free/JJ -> RB
+illuminated/VBN in/IN the/DT light/NN from/IN the/DT barn/NN their/PRP$ first/JJ kiss/NN
+- kiss/VB -> NN
 rain/NN pounding/VBG in/IN love/NN all/DT night/NN
-rain/NN on/IN the/DT roof/NN wet/NN around/IN us/PRP on/IN the/DT sheets/NNS
+rain/NN on/IN the/DT roof/NN wet/JJ around/IN us/PRP on/IN the/DT sheets/NNS
+- wet/NN -> JJ
 kisses/NNS in/IN your/PRP$ open/JJ mouth/NN the/DT rest/NN of/IN you/PRP
 in/IN and/CC out/IN of/IN the/DT river/NN 's/POS mouth/NN a/DT tongue/NN of/IN sea/NN
-opening/VBG my/PRP$ legs/NNS to/TO the/DT flooded/VBN river/NN currents/NNS meet/VB
-jerking/VBG off/RP the/DT love/NN scene/NN played/VBD by/IN marionettes/NNS
-deep/JJ humming/NN waves/NNS unrolling/VBG the/DT bay/NN
-relaxed/NN cherry/NN flowers/NNS unfold/VBP peace/NN
+opening/VBG my/PRP$ legs/NNS to/TO the/DT flooded/VBN river/NN currents/NNS meet/VBP
+- meet/VB -> VBP
+jerking/VBG off/RP the/DT love/NN scene/NN played/VBN by/IN marionettes/NNS
+- played/VBD -> VBN
+deep/JJ humming/VBG waves/NNS unrolling/VBG the/DT bay/NN
+- humming/NN -> VBG
+relaxed/JJ cherry/NN flowers/NNS unfold/VBP peace/NN
+- relaxed/NN -> JJ
 across/IN the/DT fence/NN with/IN his/PRP$ cherry/NN in/IN bloom/NN I/PRP can/MD forgive/VB him/PRP
 planting/VBG peas/NNS a/DT harvest/NN today/NN of/IN peace/NN
-asleep/NN morning/NN seas/NNS quiet/VBP pink/JJ
+asleep/NN morning/NN seas/NNS quiet/RB pink/JJ
+- quiet/VBP -> RB
 - pink/NN -> JJ
-raised/VBN up/RP within/IN the/DT protection/NN a/DT mountain/NN unfolding/NN
+raised/VBN up/RP within/IN the/DT protection/NN a/DT mountain/NN unfolding/VBG
+- unfolding/NN -> VBG
 a/DT touch/NN of/IN silk/NN caressing/VBG her/PRP$ body/NN glistening/VBG sperm/NN
-vacation/NN utterly/RB exhausted/VBD by/IN pleasure/NN
-local/JJ flirt/NN two/CD pair/NN of/IN wool/NN socks/NNS below/IN a/DT backless/NN dress/NN
-standing/NN still/RB his/PRP$ glance/NN begins/VBZ the/DT dance/NN
+vacation/NN utterly/RB exhausted/VBN by/IN pleasure/NN
+- exhausted/VBD -> VBN
+local/JJ flirt/NN two/CD pair/NN of/IN wool/NN socks/NNS below/IN a/DT backless/JJ dress/NN
+- backless/NN -> JJ
+standing/VBG still/RB his/PRP$ glance/NN begins/VBZ the/DT dance/NN
+- standing/NN -> VBG
 - begins/NNS -> VBZ
 silence/NN between/IN eyes/NNS love/VB lights/NNS
-her/PRP$ hem/NN the/DT wind/NN lifts/NN a/DT little/JJ fog/NN
-still/RB awake/VB on/IN top/NN of/IN the/DT comforter/NN one/CD feather/NN
+her/PRP$ hem/NN the/DT wind/NN lifts/VBZ a/DT little/JJ fog/NN
+- lifts/NN -> VBZ
+still/RB awake/JJ on/IN top/NN of/IN the/DT comforter/NN one/CD feather/NN
+- awake/VB -> JJ
 long/RB damp/JJ beach/NN winter/NN solstice/NN at/IN ebb/JJ tide/NN
-walking/VBG in/IN a/DT fog/NN a/DT solitary/JJ person/NN attended/VBD by/IN angels/NNS
+walking/VBG in/IN a/DT fog/NN a/DT solitary/JJ person/NN attended/VBN by/IN angels/NNS
+- attended/VBD -> VBN
 the/DT shape/NN of/IN wind/NN writing/VBG in/IN dunes/NNS loneliness/NN
 alone/RB in/IN the/DT house/NN the/DT flavor/NN of/IN peppermint/NN cold/JJ on/IN the/DT tongue/NN
 - cold/NN -> JJ
 a/DT journey/NN begins/VBZ the/DT way/NN familiar/JJ to/TO the/DT door/NN
 frozen/NN to/TO his/PRP$ feet/NNS the/DT length/NN of/IN a/DT shadow/NN wanting/VBG to/TO sleep/VB
-alone/RB in/IN the/DT room/NN the/DT gaudy/NN television/NN and/CC me/PRP smiling/VBG
+alone/RB in/IN the/DT room/NN the/DT gaudy/JJ television/NN and/CC me/PRP smiling/VBG
+- gaudy/NN -> JJ
 empty/JJ coffee/NN cup/NN the/DT face/NN looking/VBG at/IN me/PRP gone/VBN
-homeless/NN man/NN tied/VBN to/TO his/PRP$ sleeping/VBG bag/NN shoes/NNS going/VBG nowhere/RB
+homeless/JJ man/NN tied/VBN to/TO his/PRP$ sleeping/VBG bag/NN shoes/NNS going/VBG nowhere/RB
+- homeless/NN -> JJ
 art/NN store/NN sale/NN the/DT poet/NN buys/VBZ erasers/NNS at/IN a/DT discount/NN
-an/DT old/JJ maid/NN her/PRP$ favorite/JJ dancing/NN dress/NN yellows/VBZ the/DT attic/JJ
+an/DT old/JJ maid/NN her/PRP$ favorite/JJ dancing/VBG dress/NN yellows/VBZ the/DT attic/NN
+- dancing/NN -> VBG
+- attic/JJ -> NN
 warm-breath/NN wind/NN words/NNS are/VBP helpless/JJ on/IN parted/VBN lips/NNS
-since/IN birth/NN unemployed/NNS the/DT rich/JJ man/NN and/CC his/PRP$ navel/NN
+since/IN birth/NN unemployed/VBN the/DT rich/JJ man/NN and/CC his/PRP$ navel/NN
+- unemployed/NNS -> VBN
 darkness/NN welling/VBG up/RP cold/JJ waters/NNS of/IN the/DT sea/NN a/DT sob/NN
-songs/NNS of/IN sorrow/NN the/DT harp/NN string/NN breaks/NNS the/DT fall/NN of/IN tears/NNS
-laughter/NN after/IN the/DT argument/NN sounds/NNS like/IN sobs/NN
-a/DT blue/JJ wave/NN on/IN the/DT crest/NN an/DT eyelid/NN closed/VBD
-deep/JJ sea/NN green/JJ waters/NNS sheltered/VBN by/IN a/DT cove/NN slipping/NN into/IN something/NN frothy/JJ
-rented/VBN house/NN rows/NNS of/IN ocean/NN waves/NNS seem/NNS unfaithful/JJ
+songs/NNS of/IN sorrow/NN the/DT harp/NN string/NN breaks/VBZ the/DT fall/NN of/IN tears/NNS
+- breaks/NNS -> VBZ
+laughter/NN after/IN the/DT argument/NN sounds/VBZ like/IN sobs/NN
+- sounds/NNS -> VBZ
+a/DT blue/JJ wave/NN on/IN the/DT crest/NN an/DT eyelid/NN closed/VBN
+- closed/VBD -> VBN
+deep/JJ sea/NN green/JJ waters/NNS sheltered/VBN by/IN a/DT cove/NN slipping/VBG into/IN something/NN frothy/JJ
+- slipping/NN -> VBG
+rented/VBN house/NN rows/NNS of/IN ocean/NN waves/NNS seem/VBP unfaithful/JJ
 - ocean/JJ -> NN
+- seem/NNS -> VBP
 a/DT strange/JJ house/NN the/DT new/JJ nightgown/NN seems/VBZ unfaithful/JJ
 a/DT young/JJ girl/NN chewing/VBG gum/NN in/IN conversation/NN with/IN herself/PRP
 river/NN childhood/NN banging/VBG a/DT bucket/NN boat/NN sides/NNS
