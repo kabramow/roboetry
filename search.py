@@ -70,7 +70,7 @@ def poem_searcher(haiku, search_space, p_search_lines):
 
     # add our first word to the frontier
     first_word.h = heuristic(haiku, first_word.word, first_word.word, search_lines, start_of_line, poem)
-    first_word.g = syll #how close we are to the goal = how many syllables we have left
+    first_word.g = syll*-1 #how close we are to the goal = how many syllables we have left
     first_word.f = first_word.h+first_word.g
     frontier.put((first_word.f, first_word))
 
@@ -363,7 +363,6 @@ def heuristic(haiku, word1, word2, search, start_of_line, poem):
     sem_poem = semantic_similarity_to_previous_word(word1, word2)
     sem_word = semantic_similarity_to_poem(word2, poem)
     grammar = grammar_heuristic(word1, word2)
-    print(grammar)
     #topic_sim = similarity_to_topic(word2, poem)
     liklihood_of_traliing_word = distance + continuation + sem_poem + sem_word + grammar
     return liklihood_of_traliing_word
