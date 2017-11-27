@@ -120,7 +120,7 @@ def poem_searcher(haiku, search_space, p_search_lines):
                     neighborG = first_word.g + syll*-1
                     neighborF = neighborG + neighborH
                     if neighborF < neighbor.f:
-                        neighbor.f = neighborf
+                        neighbor.f = neighborF
                         frontier.put((neighbor.f,neighbor))
                     if neighbor in explored:
                         explored.remove(neighbor)
