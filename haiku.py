@@ -7,19 +7,17 @@ import constants
 import syllabifier
 from nltk.corpus import brown
 from nltk.util import bigrams
-from nltk.collocations import *
-
-
 
 
 class Haiku(object):
     """Haiku class represents a haiku poem"""
 
-    def __init__(self, text_file_name, selection_length = 25, corpus_genre='religion'):
-        file = open(text_file_name, 'r').read()
+    def __init__(self, text_file_name, selection_length=25, corpus_genre='religion'):
+        file = open(text_file_name, 'r')
+        text = file.read()
+        file.close()
 
-        self.originText = re.sub('[^a-zA-Z0-9\n\.]', ' ', file) #string
-        self.words_in_origin = [w.lower() for w in nltk.word_tokenize(self.originText)]
+        self.originText = re.sub('[^a-zA-Z0-9\n\.]', ' ', text) #string
         self.chosen_lines_list = self.choose_lines_list(selection_length) #list of lists
         self.chosen_lines = self.choose_lines(selection_length) #string
         self.mainText = "" #string
@@ -34,14 +32,10 @@ class Haiku(object):
         self.corpus = brown.words(categories=corpus_genre)
         self.lc_corp = [w.lower() for w in self.corpus]
         self.common_bigrams = [(x, y) for (x, y) in bigrams(self.lc_corp)
-                               if x in constants.PRONUNCIATION_DICT and y in constants.PRONUNCIATION_DICT]
+                               if x in constants.PRONUNCIATION_DICT and y in constants.PRONUNCIATION_DICT
+                               and x in self.mainText and y in self.mainText]
         self.cfd = nltk.ConditionalFreqDist(self.common_bigrams)
-
         self.poem = self.make_poem()  # string
-
-
-
-
 
     def choose_lines_list(self, num_lines):
         """returns list of lists with each sublist representing a line in the output
@@ -66,12 +60,12 @@ class Haiku(object):
         lines_chosen = 0
 
         while lines_chosen < num_lines:
-            if lines[start] != []:
+            if lines[start] is not []:
                 chosen_lines.append(lines[start])
                 lines_chosen += 1
-                start+=1
+                start += 1
             else:
-                start+=1
+                start += 1
 
         return chosen_lines
 
@@ -91,12 +85,11 @@ class Haiku(object):
             poem_line = ""
         return poem_lines
 
-
     def make_poem(self):
         """Turns list of lists representing poem into an easy-to-read string
         None -> String"""
         poem_line = ""
-        poem=""
+        poem = ""
         poem_list = search.poem_searcher(self, self.clean_words, self.chosen_lines_list)
         for line in poem_list:
             for word in line:
@@ -104,7 +97,6 @@ class Haiku(object):
             poem = poem + poem_line + "\n"
             poem_line = ""
         return poem
-
 
 
 def clean_words(list_of_words):
@@ -115,5 +107,3 @@ def clean_words(list_of_words):
         if word != constants.FAKE_NEW_LINE:
             words.append(word)
     return words
-
-
