@@ -26,7 +26,7 @@ class Haiku(object):
         self.words_in_chosen_text = [w.lower() for w in nltk.word_tokenize(self.mainText)] #list of words
         self.clean_words = clean_words(self.words_in_chosen_text) #list of words
         self.clean_text = re.sub('[^a-zA-Z]', ' ',self.mainText.replace(constants.FAKE_NEW_LINE, "")) #string
-        self.poem = self.make_poem() #string
+
 
         # CORPUS ATTRIBUTES #
         self.corpus = brown.words(categories=corpus_genre)
@@ -35,6 +35,7 @@ class Haiku(object):
                                if x in constants.PRONUNCIATION_DICT and y in constants.PRONUNCIATION_DICT
                                and x in self.mainText and y in self.mainText]
         self.cfd = nltk.ConditionalFreqDist(self.common_bigrams)
+        self.poem = self.make_poem()  # string
 
     def choose_lines_list(self, num_lines):
         """returns list of lists with each sublist representing a line in the output
@@ -89,7 +90,7 @@ class Haiku(object):
         None -> String"""
         poem_line = ""
         poem = ""
-        poem_list = search.poem_searcher(self.clean_words, self.chosen_lines_list)
+        poem_list = search.poem_searcher(self, self.clean_words, self.chosen_lines_list)
         for line in poem_list:
             for word in line:
                 poem_line = poem_line + " " + word
