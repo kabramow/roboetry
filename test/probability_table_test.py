@@ -33,3 +33,4 @@ import pickle
 
 
 print(constants.PROBABILITY_TABLE.word_probabilities[0].prob_dict)
+print(constants.PROBABILITY_TABLE.word_probabilities[2].prob_dict)
