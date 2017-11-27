@@ -280,6 +280,28 @@ def semantic_similarity_to_poem(word2, poem):
     been created so far. This is to ensure the poem has a cohesive theme.
     For technical details, see docString of semantic_similarity_to_previous_word()
 
+def grammar_heuristic(word1, word2):
+    # if first word is in training corpus return probability that second word comes after it
+    # if second word in training corpus data
+    prob_table = constants.PROBABILITY_TABLE
+    word_prob = prob_table.find_word(word1)
+    if word_prob is not None:
+        following_word = wp.WordProbability.contains_following_word(word_prob, word2)
+        if following_word is not None:
+            return fw.FollowingWord.probability_following_word(following_word, word_prob.word_count)*100
+        else:
+            # find part of speech of word2
+            word2_pos = nltk.pos_tag(word2)[0][1]
+            return wp.WordProbability.part_of_speech_prob(word_prob, word2_pos)*20
+    else:
+        word1_pos = nltk.pos_tag(word1)[0][1]
+        word2_pos = nltk.pos_tag(word2)[0][1]
+        pos_prob = prob_table.find_part_of_speech(word1_pos)
+        if pos_prob is not None:
+            return pp.POSProbability.following_pos_probability(pos_prob, word2_pos)*10
+        else:
+            return 0
+
     String, nested list -> int"""
     sum = 0
     total = 0
@@ -344,17 +366,17 @@ def grammar_heuristic(word1, word2):
     if word_prob is not None:
         following_word = wp.WordProbability.contains_following_word(word_prob, word2)
         if following_word is not None:
-            return fw.FollowingWord.probability_following_word(following_word, word_prob.word_count)*100
+            return fw.FollowingWord.probability_following_word(following_word, word_prob.word_count)*-100
         else:
             # find part of speech of word2
             word2_pos = nltk.pos_tag(word2)[0][1]
-            return wp.WordProbability.part_of_speech_prob(word_prob, word2_pos)*20
+            return wp.WordProbability.part_of_speech_prob(word_prob, word2_pos)*-20
     else:
         word1_pos = nltk.pos_tag(word1)[0][1]
         word2_pos = nltk.pos_tag(word2)[0][1]
         pos_prob = prob_table.find_part_of_speech(word1_pos)
         if pos_prob is not None:
-            return pp.POSProbability.following_pos_probability(pos_prob, word2_pos)*10
+            return pp.POSProbability.following_pos_probability(pos_prob, word2_pos)*-10
         else:
             return 0
 
@@ -371,7 +393,5 @@ def heuristic(haiku, word1, word2, search, start_of_line, poem):
     sem_word = semantic_similarity_to_poem(word2, poem)
     grammar = grammar_heuristic(word1, word2)
     #topic_sim = similarity_to_topic(word2, poem)
-    if continuation != 1: #we know that the word can follow the previous
-        return -4 #-4 = the lowest possible score
     liklihood_of_traliing_word = distance + continuation + sem_poem + sem_word + grammar
     return liklihood_of_traliing_word

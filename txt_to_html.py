@@ -124,5 +124,4 @@ def poem_generator_for_non_haiku(poem_words):
     for word in last_line:
         ret_string += word + " "
 
-
     return ret_string
