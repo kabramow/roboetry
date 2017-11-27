@@ -13,31 +13,39 @@ from nltk.corpus import wordnet
 from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
 import string
+import word_node
+import word_probability as wp
+import pos_probability as pp
+import following_word as fw
 #from gensim import corpora
+
+
 
 def poem_searcher(haiku, search_space, p_search_lines):
     """Returns a 5-7-5 Haiku based off of heuristics
     String, list -> list"""
-
+    syll = 17
+    last_word_score = 0
     frontier = PriorityQueue()
     pass_through = 0
-    num_syllables = 5
+    num_syllables = 5 #starting number for first line
     search_lines = p_search_lines
     start_of_line = False #tells us if the word we are picking is the first in a line
-    end_of_line = False #tells us if the word we are picking is the end of the line
     poem = [[], [], []]
-
-    # CODE FOR PICKING START WORD (RANDOM)
-    # start word must be towards beginning of text
+    explored = []
     updated_search_space = []
 
-    #stop words = unimportant words -> a, the, etc.
-    stopWords = set(stopwords.words('english'))
-
+    stopWords = set(stopwords.words('english')) #stop words = unimportant words -> a, the, etc.
     #filtering out stop words
     for w in search_space:
         if w not in stopWords:
             updated_search_space.append(w)
+
+    #saving words as objects so we can assign h,f,g values to them
+    j=0
+    nodes = []
+    for word in updated_search_space:
+        nodes.append(word_node.Word(word))
 
     #Choosing first word -> picked based from first part of text, favor words that have
     #a lot of potential continuations
@@ -45,25 +53,36 @@ def poem_searcher(haiku, search_space, p_search_lines):
     num_next = [(len(haiku.cfd[x]), x) for x in haiku.cfd]
     sorted_next = sorted(num_next) #list of continuation words
     first_word = sorted_next[-1][1] #this will be the word with the most continuation words
+    first_word = word_node.Word(first_word)
+
+    #making sure the word is useable/a good word
     i=1
-    while first_word not in first_word_search_space and constants.PRONUNCIATION_DICT:
+    while first_word.word not in first_word_search_space or first_word.word not in constants.PRONUNCIATION_DICT:
         first_word = sorted_next[-i][1]
         i+=1
+        first_word = word_node.Word(first_word)
 
     # update the number of syllables left we have to work with
-    syll_remaining = num_syllables - syllabifier.get_syllables(first_word)
+    syll_remaining = num_syllables - syllabifier.get_syllables(first_word.word)
+    syll += syllabifier.get_syllables(first_word.word)
+
     # append our chosen word to the corresponding line of our poem
-    poem[pass_through].append(first_word)
+    poem[pass_through].append(first_word.word)
+
     # add our first word to the frontier
-    #frontier.put((heuristic(haiku, first_word, first_word, search_lines, start_of_line, poem), first_word))
+    first_word.h = heuristic(haiku, first_word.word, first_word.word, search_lines, start_of_line, poem)
+    first_word.g = syll #how close we are to the goal = how many syllables we have left
+    first_word.f = first_word.h+first_word.g
+    frontier.put((first_word.f, first_word))
 
     finished = False
 
-    while not finished:
+    while frontier:
+        frontier.get() #grab first word
+        explored.append(first_word)
         # checking if we've finished all 3 lines of the haiku
         if pass_through == 2 and syll_remaining == 0:
             finished = True
-            break
         # checking if we're done with the first line: if so, we need to start on a new line with 7 syllables
         elif pass_through == 0 and syll_remaining == 0:
             syll_remaining = 7
@@ -77,33 +96,40 @@ def poem_searcher(haiku, search_space, p_search_lines):
         else:
             start_of_line = False
 
-        index_of_current_word = updated_search_space.index(first_word)
+        index_of_current_word = updated_search_space.index(first_word.word)
         #We need to reference individual words, but also whole lines to know what position
         #we are at in the html output. Rather than continually changing between data structures
         #(i.e. between a regular list and a nested list), we keep track of both cocurrently
         #so that we may rather reference which ever one we need at the moment
         updated_search_space = updated_search_space[index_of_current_word+1:]
-        search_lines = update_search_lines(search_lines, first_word)
-
-
-        # UPDATING THE FRONTIER
-        for neighbor in get_neighbors_list(first_word, updated_search_space):
-            if neighbor in constants.PRONUNCIATION_DICT and syllabifier.get_syllables(neighbor) <= syll_remaining\
-                    and neighbor!=first_word:
+        nodes = nodes[index_of_current_word + 1:]
+        search_lines = update_search_lines(search_lines, first_word.word)
+        frontier = PriorityQueue()
+        neighbors = get_neighbors_list(first_word.word, nodes)
+        for neighbor in neighbors:
+            if neighbor.word in constants.PRONUNCIATION_DICT and syllabifier.get_syllables(neighbor.word) <= syll_remaining\
+                    and neighbor.word!=first_word.word:
                 # neighbors = all possible words, frontier = usable words, with heuristic values
-                frontier.put((heuristic(haiku, first_word, neighbor, search_lines, start_of_line, poem), neighbor))
-
+                if not (is_present(frontier.queue,neighbor) or neighbor in explored):
+                    neighbor.h = heuristic(haiku, first_word.word, neighbor.word, search_lines,start_of_line, poem)
+                    neighbor.g = first_word.g + syll*-1  # how many syllables we have left - i.e. how close we are to
+                    # the goal (but we are working all in negatives with PQ)
+                    neighbor.f = neighbor.g + neighbor.h
+                    frontier.put((neighbor.f, neighbor))
+                else:
+                    neighbor.g = min(neighbor.g, first_word.g + (first_word.g-syll)*-1)
+                    neighborf = neighbor.g + neighbor.h
+                    if neighborf < neighbor.f:
+                        neighbor.f = neighborf
+                        frontier.put((neighbor.f,neighbor))
         if frontier.queue:
             # grab first word in Priority Queue - i.e. WORD WITH LOWEST HEURISTIC
             first_word = sorted(list(frontier.queue))[0][1]
         else:
             break
-
-        # RESET FRONTIER - the word that we choose eliminates a lot of words currently in the frontier,
-        # so it is easy to remove all and then add again the valid words as the neighbors of the new word
-        frontier = PriorityQueue()
-        syll_remaining -= syllabifier.get_syllables(first_word)
-        poem[pass_through].append(first_word)
+        syll_remaining -= syllabifier.get_syllables(first_word.word)
+        syll += syllabifier.get_syllables(first_word)
+        poem[pass_through].append(first_word.word)
 
     if finished == False:
         print("Syllable requirements not met.")
@@ -111,10 +137,24 @@ def poem_searcher(haiku, search_space, p_search_lines):
 
     return poem
 
+def is_present(queue, neighbor):
+    """checks if a Word object is present in a queue
+
+    Queue, Word -> Boolean"""
+    in_frontier = False
+    for word_pair in queue:
+        if word_pair[1] == neighbor.word:
+            in_frontier = True
+            current_score = word_pair[0]
+            break
+        else:
+            in_frontier = False
+    return in_frontier
 
 
 def update_search_lines(search_lines, p_word):
     """Keeps track of what line we are in in the html output
+
     nested list, string -> nested list"""
     index_to_cut = None
     row_count = 0
@@ -184,6 +224,7 @@ def distance_between_words(word1, word2, search_lines):
 def continuation_probability(haiku, word1, word2, start_of_line):
     """using training corpus, returns value symbolizing how likely word2 is
      to follow word1, based on word continuations in corpus texts
+
      Haiku object, string, string, boolean -> int"""
     val = 1 #place holder value
 
@@ -238,6 +279,7 @@ def semantic_similarity_to_poem(word2, poem):
     """Measures the similarity between a word and the poem that has
     been created so far. This is to ensure the poem has a cohesive theme.
     For technical details, see docString of semantic_similarity_to_previous_word()
+
     String, nested list -> int"""
     sum = 0
     total = 0
@@ -267,6 +309,7 @@ def semantic_similarity_to_previous_word(word1, word2):
     synsets = list of synonyms
     synset = string containing word and part of speech
     wup_similarity = similarity measure in decimals
+
     String, string -> int"""
     val = 1
     if wordnet.synsets(word2) and wordnet.synsets(word1):
@@ -293,6 +336,27 @@ def similarity_to_topic(word2, poem):
     print(ldamodel.print_topics(num_topics=1, num_words=3))
     return ldamodel
 """
+def grammar_heuristic(word1, word2):
+    # if first word is in training corpus return probability that second word comes after it
+    # if second word in training corpus data
+    prob_table = constants.PROBABILITY_TABLE
+    word_prob = prob_table.find_word(word1)
+    if word_prob is not None:
+        following_word = wp.WordProbability.contains_following_word(word_prob, word2)
+        if following_word is not None:
+            return fw.FollowingWord.probability_following_word(following_word, word_prob.word_count)*100
+        else:
+            # find part of speech of word2
+            word2_pos = nltk.pos_tag(word2)[0][1]
+            return wp.WordProbability.part_of_speech_prob(word_prob, word2_pos)*20
+    else:
+        word1_pos = nltk.pos_tag(word1)[0][1]
+        word2_pos = nltk.pos_tag(word2)[0][1]
+        pos_prob = prob_table.find_part_of_speech(word1_pos)
+        if pos_prob is not None:
+            return pp.POSProbability.following_pos_probability(pos_prob, word2_pos)*10
+        else:
+            return 0
 
 
 def heuristic(haiku, word1, word2, search, start_of_line, poem):
@@ -305,8 +369,9 @@ def heuristic(haiku, word1, word2, search, start_of_line, poem):
     continuation = continuation_probability(haiku, word1, word2, start_of_line)
     sem_poem = semantic_similarity_to_previous_word(word1, word2)
     sem_word = semantic_similarity_to_poem(word2, poem)
+    grammar = grammar_heuristic(word1, word2)
     #topic_sim = similarity_to_topic(word2, poem)
     if continuation != 1: #we know that the word can follow the previous
         return -4 #-4 = the lowest possible score
-    liklihood_of_traliing_word = distance + continuation + sem_poem + sem_word
-return liklihood_of_traliing_word
+    liklihood_of_traliing_word = distance + continuation + sem_poem + sem_word + grammar
+    return liklihood_of_traliing_word
