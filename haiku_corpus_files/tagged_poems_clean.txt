@@ -3145,7 +3145,7 @@ leafing/VBG trees/NNS in/IN evening/NN 's/POS purple/JJ glow/NN no/RB longer/JJR
 filling/VBG a/DT spring-flooded/JJ river/NN new/JJ green/JJ leaves/NNS
 edges/NNS of/IN oak/NN extended/VBN by/IN new/JJ leaves/NNS bright/RB as/IN blossoms/NNS
 sea/NN wind/NN pushing/VBG up/RP the/DT mountain/NN new/JJ green/JJ leaves/NNS
-pale/NN light/NN cool/NN in/IN the/DT dim/NN forest/NN new/JJ leaves/NNS
+pale/JJ light/NN cool/NN in/IN the/DT dim/JJ forest/NN new/JJ leaves/NNS
 planting/VBG onion/NN sets/NNS the/DT roar/NN of/IN surf/NN that/DT much/JJ louder/NN
 onions/NNS planted/VBD pushed/VBN into/IN soft/JJ earth/NN bombs/NNS in/IN Libya/NNP
 pansies/NNS in/IN a/DT canning/NN jar/NN baby/NN photos/NNS

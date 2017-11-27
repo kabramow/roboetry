@@ -1,5 +1,6 @@
 import constants
 import probability_table
+import pickle
 
 # myProbabilityTable = probability_table.ProbabilityTable("../haiku_corpus_files/tagged_poems_mancor.txt")
 # max_count = 0
@@ -17,5 +18,18 @@ import probability_table
 # print(constants.PROBABILITY_TABLE.word_probabilities[13].word)
 
 
-print(constants.PROBABILITY_TABLE.word_probabilities[12].word)
-print(constants.PROBABILITY_TABLE.word_probabilities[13].word)
+# An arbitrary collection of objects supported by pickle.
+# data = probability_table.ProbabilityTable("../haiku_corpus_files/tagged_poems_clean.txt")
+#
+# with open('../haiku_corpus_files/prob.pickle', 'wb') as f:
+#     # Pickle the 'data' dictionary using the highest protocol available.
+#     pickle.dump(data, f, pickle.HIGHEST_PROTOCOL)
+#
+# data = None
+# with open('../haiku_corpus_files/prob.pickle', 'rb') as f:
+#     # The protocol version used is detected automatically, so we do not
+#     # have to specify it.
+#     data = pickle.load(f)
+
+
+print(constants.PROBABILITY_TABLE.word_probabilities[0].prob_dict)
