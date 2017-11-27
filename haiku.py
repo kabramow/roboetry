@@ -13,20 +13,29 @@ class Haiku(object):
     """Haiku class represents a haiku poem"""
 
     def __init__(self, text_file_name, selection_length=25, corpus_genre='religion'):
-        file = open(text_file_name, 'r')
-        text = file.read()
-        file.close()
+        try:
+            if text_file_name.find(".txt") != -1:
+                file = open(text_file_name, 'r')
+                text = file.read()
+                file.close()
+            else:
+                print("Invalid File - need a txt file")
+                raise Exception("Invalid File")
+        except:
+            print("Unable to read file, Rootabaga Stories used instead")
+            file = open("rootabaga_stories.txt", 'r')
+            text = file.read()
+            file.close()
 
-        self.originText = re.sub('[^a-zA-Z0-9\n\.]', ' ', text) #string
-        self.chosen_lines_list = self.choose_lines_list(selection_length) #list of lists
-        self.chosen_lines = self.choose_lines(selection_length) #string
-        self.mainText = "" #string
+        self.originText = re.sub('[^a-zA-Z0-9\n.]', ' ', text)  # string
+        self.chosen_lines_list = self.choose_lines_list(selection_length)  # list of lists
+        self.chosen_lines = self.choose_lines()  # string
+        self.mainText = ""  # string
         for word in self.chosen_lines:
             self.mainText += word.lower()
-        self.words_in_chosen_text = [w.lower() for w in nltk.word_tokenize(self.mainText)] #list of words
-        self.clean_words = clean_words(self.words_in_chosen_text) #list of words
-        self.clean_text = re.sub('[^a-zA-Z]', ' ',self.mainText.replace(constants.FAKE_NEW_LINE, "")) #string
-
+        self.words_in_chosen_text = [w.lower() for w in nltk.word_tokenize(self.mainText)]  # list of words
+        self.clean_words = clean_words(self.words_in_chosen_text)  # list of words
+        self.clean_text = re.sub('[^a-zA-Z]', ' ',self.mainText.replace(constants.FAKE_NEW_LINE, ""))  # string
 
         # CORPUS ATTRIBUTES #
         self.corpus = brown.words(categories=corpus_genre)
@@ -48,7 +57,6 @@ class Haiku(object):
 
         while lines_chosen < num_lines:
             if lines[start] is not '':
-                print(str([lines[start]]))
                 temp_chosen_lines.append(lines[start])
                 lines_chosen += 1
                 start += 1
@@ -62,7 +70,7 @@ class Haiku(object):
 
         return chosen_lines
 
-    def choose_lines(self, num_lines):
+    def choose_lines(self):
         """Returns chosen lines as text. We are primarily working with text strings, but
         we also need the text represented as a list of words to pull each word and a list
         of lists to represent each line. Hence we have a ton of different representations
