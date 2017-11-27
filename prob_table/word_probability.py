@@ -1,9 +1,11 @@
-import following_word as fw
+from prob_table import following_word as fw
 
 
 class WordProbability(object):
     def __init__(self, word, word_count=1):
+        # the word
         self.word = word
+        # how many times the word occurs in the file
         self.word_count = word_count
         # a dictionary with key pos
         # and content number of times that pos occurs
@@ -12,8 +14,6 @@ class WordProbability(object):
         self.following_words = []
 
     def add_new_instance(self, current_part_of_speech, next_word, next_part_of_speech):
-        # add 1 to total instances of word
-        # self.word_count += 1
         # update prob dictionary
         self.update_prob_dictionary(current_part_of_speech)
         # check if next word is in following words list

@@ -1,16 +1,17 @@
-import syllabifier
-import brown_corpus_texts
-from queue import PriorityQueue
-import math
-import constants
-import nltk
-from nltk.corpus import wordnet
-from nltk.corpus import stopwords
-import word_node
-import word_probability as wp
-import pos_probability as pp
-import following_word as fw
 import heapq
+import math
+
+import nltk
+from nltk.corpus import stopwords
+from nltk.corpus import wordnet
+
+import brown_corpus_texts
+import constants
+import syllabifier
+import word_node
+from prob_table import following_word as fw
+from prob_table import pos_probability as pp
+from prob_table import word_probability as wp
 
 
 def poem_searcher(haiku, search_space, p_search_lines):
@@ -99,7 +100,7 @@ def poem_searcher(haiku, search_space, p_search_lines):
         nodes = nodes[index_of_current_word + 1:]
         search_lines = update_search_lines(search_lines, first_word.word)
         frontier = []
-        neighbors = get_neighbors_list(first_word.word, nodes)
+        neighbors = get_neighbors_list(nodes)
         for neighbor in neighbors:
             if neighbor.word in constants.PRONUNCIATION_DICT \
                     and syllabifier.get_syllables(neighbor.word) <= syllables_remaining\
@@ -124,9 +125,8 @@ def poem_searcher(haiku, search_space, p_search_lines):
                     if neighbor not in frontier:
                         heapq.heappush(frontier, neighbor)
 
-        if frontier is not []:
+        if len(frontier) != 0 and frontier is not None:
             # grab first word in Priority Queue - i.e. WORD WITH LOWEST HEURISTIC
-            # first_word = sorted(list(frontier.queue))[0][1]
             first_word = heapq.heappop(frontier)[1]
         else:
             break
@@ -149,7 +149,6 @@ def is_present(queue, neighbor):
     for word_pair in queue:
         if word_pair[1] == neighbor.word:
             in_frontier = True
-            current_score = word_pair[0]
             break
         else:
             in_frontier = False
@@ -162,6 +161,7 @@ def update_search_lines(search_lines, p_word):
     nested list, string -> nested list"""
     index_to_cut = None
     row_count = 0
+    y_to_cut = 0
     for line in search_lines:
         for word in line:
             if word == p_word:
@@ -177,7 +177,7 @@ def update_search_lines(search_lines, p_word):
     return return_lines
 
 
-def get_neighbors_list(word, words_list):
+def get_neighbors_list(words_list):
     """returns words following given word
     string, list -> list"""
     neighbors = words_list[0:int(len(words_list)/3)]
@@ -189,7 +189,6 @@ def distance_between_words(word1, word2, search_lines):
     and uses common normalization of 1/(1+d(p1,p2) to convert
     to measure of similarity
     string, string, nested list -> int"""
-    val = 0
     x_pos_1 = None
     y_pos_1 = None
     x_pos_2 = None
@@ -222,7 +221,7 @@ def distance_between_words(word1, word2, search_lines):
     return 1/(1 + val)*-1
 
 
-def continuation_probability(haiku, word1, word2, start_of_line):
+def continuation_probability(haiku, word1, word2):
     """using training corpus, returns value symbolizing how likely word2 is
      to follow word1, based on word continuations in corpus texts
 
@@ -261,16 +260,6 @@ def continuation_probability(haiku, word1, word2, start_of_line):
     if word2 in sf_words:
         val = brown_corpus_texts.sf_cfd[word1].freq(word2)
 
-    # if the word we are choosing is the first of a line, favor words that have a lot of following words
-    """
-    if start_of_line:
-        num_next = [(len(brown_corpus_texts.fiction_cfd[x]), x) for x in brown_corpus_texts.fiction_cfd]
-        sorted_next = sorted(num_next)
-        for pair in sorted_next:
-            if pair[1] == word2:
-                val = pair[0]
-                print("HERE ", pair[1], pair[0])
-    """
     if val != 1:
         return val*-1
     else:
@@ -336,17 +325,17 @@ def grammar_heuristic(word1, word2):
     if word_prob is not None:
         following_word = wp.WordProbability.contains_following_word(word_prob, word2)
         if following_word is not None:
-            return fw.FollowingWord.probability_following_word(following_word, word_prob.word_count)*-100
+            return fw.FollowingWord.probability_following_word(following_word, word_prob.word_count)*-10
         else:
             # find part of speech of word2
             word2_pos = nltk.pos_tag(word2)[0][1]
-            return wp.WordProbability.part_of_speech_prob(word_prob, word2_pos)*-20
+            return wp.WordProbability.part_of_speech_prob(word_prob, word2_pos)*-2
     else:
         word1_pos = nltk.pos_tag(word1)[0][1]
         word2_pos = nltk.pos_tag(word2)[0][1]
         pos_prob = prob_table.find_part_of_speech(word1_pos)
         if pos_prob is not None:
-            return pp.POSProbability.following_pos_probability(pos_prob, word2_pos)*-10
+            return pp.POSProbability.following_pos_probability(pos_prob, word2_pos)*-1
         else:
             return 1
 
@@ -358,10 +347,9 @@ def heuristic(haiku, word1, word2, search, start_of_line, poem):
     this means the lowest negative will be chosen first.
     string, string -> int"""
     distance = distance_between_words(word1, word2, search)
-    continuation = continuation_probability(haiku, word1, word2, start_of_line)
+    continuation = continuation_probability(haiku, word1, word2)
     sem_poem = semantic_similarity_to_previous_word(word1, word2)
     sem_word = semantic_similarity_to_poem(word2, poem)
     grammar = grammar_heuristic(word1, word2)
-    # topic_sim = similarity_to_topic(word2, poem)
     likelihood_of_trailing_word = distance + continuation + sem_poem + sem_word + grammar
     return likelihood_of_trailing_word

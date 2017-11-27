@@ -66,8 +66,8 @@ def wrap_string_in_html(output_file_name, source_file):
 
     # text = txt_reader.get_random_selection(source_file)
     # poem_words = txt_reader.get_up_to_20_random_words(text)
-    title0 = txt_reader.get_title(source_file)
-    title = re.sub('[^a-zA-Z0-9\" "]', '', title0)[1:]
+
+    title = txt_reader.get_title(source_file)
 
     haiku_poem = haiku.Haiku(source_file)
 

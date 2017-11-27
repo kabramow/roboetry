@@ -1,0 +1,14 @@
+Run Driver class in driver folder to generate blackout haiku poems for three sample texts provided
+1. American Fairy Tales by Frank Baum
+2. Pride and Prejudice by Jane Austen
+3. Second Treatise of Government by John Locke
+
+Haiku generator should work for any book written in English as a plain txt file in the Project Gutenberg library
+If file has an issue - the system defaults to generating a poem from Rootabaga Stories instead
+
+Due to the nature of our algorithm, it will take a second before each completed file opens in a new window
+
+The Haiku class stores a haiku object
+The search class contains our search algorithm and heuristics
+
+The rest are objects or helper functions that have been separated for easier reading

@@ -1,5 +1,5 @@
 import constants
-import probability_table
+from prob_table import probability_table
 import pickle
 
 # myProbabilityTable = probability_table.ProbabilityTable("../haiku_corpus_files/tagged_poems_mancor.txt")
@@ -30,7 +30,7 @@ import pickle
 #     # The protocol version used is detected automatically, so we do not
 #     # have to specify it.
 #     data = pickle.load(f)
-
-
+#
+# print(data.word_probabilities[0].prob_dict)
 print(constants.PROBABILITY_TABLE.word_probabilities[0].prob_dict)
 print(constants.PROBABILITY_TABLE.word_probabilities[2].prob_dict)

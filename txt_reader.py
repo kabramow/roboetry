@@ -1,4 +1,5 @@
 import random
+import re
 
 
 def get_random_selection(file_name):
@@ -54,14 +55,19 @@ def get_up_to_20_random_words(string):
 
 
 def get_title(file_name):
-    f = open(file_name, 'r')
-    text = f.read()
-    f.close()
+    try:
+        f = open(file_name, 'r')
+        text = f.read()
+        f.close()
 
-    lines = text.split('\n')
-    first_line = lines[0]
-    title = first_line.replace("The Project Gutenberg EBook of ", "")
-    title = title.replace(", by ", " </i>by ")
-    title = "<i>" + title
-
-    return title
+        lines = text.split('\n')
+        first_line = lines[0]
+        first_line = re.sub('[^a-zA-Z0-9\" "]', '', first_line)
+        title = first_line.title()
+        title = title.replace("The Project Gutenberg Ebook", "")
+        title = title.replace("Of", "", 1)
+        title = title.replace("By", "</i> by")
+        title = "<i> " + title
+        return title
+    except:
+        return "Unable to Process File, <i>Rootabaga Stories</i> used instead"
