@@ -17,7 +17,6 @@ import word_node
 import word_probability as wp
 import pos_probability as pp
 import following_word as fw
-#from gensim import corpora
 
 
 
@@ -117,11 +116,17 @@ def poem_searcher(haiku, search_space, p_search_lines):
                     neighbor.f = neighbor.g + neighbor.h
                     frontier.put((neighbor.f, neighbor))
                 else:
-                    neighbor.g = min(neighbor.g, first_word.g + (first_word.g-syll)*-1)
-                    neighborf = neighbor.g + neighbor.h
-                    if neighborf < neighbor.f:
+                    neighborH = heuristic(haiku, first_word.word, neighbor.word, search_lines,start_of_line, poem)
+                    neighborG = first_word.g + syll*-1
+                    neighborF = neighborG + neighborH
+                    if neighborF < neighbor.f:
                         neighbor.f = neighborf
                         frontier.put((neighbor.f,neighbor))
+                    if neighbor in explored:
+                        explored.remove(neighbor)
+                    if neighbor not in frontier:
+                        frontier.append(neighbor)
+
         if frontier.queue:
             # grab first word in Priority Queue - i.e. WORD WITH LOWEST HEURISTIC
             first_word = sorted(list(frontier.queue))[0][1]
@@ -280,28 +285,6 @@ def semantic_similarity_to_poem(word2, poem):
     been created so far. This is to ensure the poem has a cohesive theme.
     For technical details, see docString of semantic_similarity_to_previous_word()
 
-def grammar_heuristic(word1, word2):
-    # if first word is in training corpus return probability that second word comes after it
-    # if second word in training corpus data
-    prob_table = constants.PROBABILITY_TABLE
-    word_prob = prob_table.find_word(word1)
-    if word_prob is not None:
-        following_word = wp.WordProbability.contains_following_word(word_prob, word2)
-        if following_word is not None:
-            return fw.FollowingWord.probability_following_word(following_word, word_prob.word_count)*100
-        else:
-            # find part of speech of word2
-            word2_pos = nltk.pos_tag(word2)[0][1]
-            return wp.WordProbability.part_of_speech_prob(word_prob, word2_pos)*20
-    else:
-        word1_pos = nltk.pos_tag(word1)[0][1]
-        word2_pos = nltk.pos_tag(word2)[0][1]
-        pos_prob = prob_table.find_part_of_speech(word1_pos)
-        if pos_prob is not None:
-            return pp.POSProbability.following_pos_probability(pos_prob, word2_pos)*10
-        else:
-            return 0
-
     String, nested list -> int"""
     sum = 0
     total = 0
@@ -346,18 +329,6 @@ def semantic_similarity_to_previous_word(word1, word2):
         return 1
     return val*-1
 
-"""
-def similarity_to_topic(word2, poem):
-    # TOPIC MODELLING #
-    lemma = WordNetLemmatizer()
-    normalized = (lemma.lemmatize(word) for word in poem)
-    dictionary = corpora.Dictionary(normalized)
-    doc_term_matrix = [dictionary.doc2bow(doc) for doc in normalized]
-    Lda = gensim.models.ldamodel.LdaModel
-    ldamodel = Lda(doc_term_matrix, num_topics=1, id2word = dictionary, passes=50)
-    print(ldamodel.print_topics(num_topics=1, num_words=3))
-    return ldamodel
-"""
 def grammar_heuristic(word1, word2):
     # if first word is in training corpus return probability that second word comes after it
     # if second word in training corpus data
@@ -378,7 +349,7 @@ def grammar_heuristic(word1, word2):
         if pos_prob is not None:
             return pp.POSProbability.following_pos_probability(pos_prob, word2_pos)*-10
         else:
-            return 0
+            return 1
 
 
 def heuristic(haiku, word1, word2, search, start_of_line, poem):
@@ -392,6 +363,7 @@ def heuristic(haiku, word1, word2, search, start_of_line, poem):
     sem_poem = semantic_similarity_to_previous_word(word1, word2)
     sem_word = semantic_similarity_to_poem(word2, poem)
     grammar = grammar_heuristic(word1, word2)
+    print(grammar)
     #topic_sim = similarity_to_topic(word2, poem)
     liklihood_of_traliing_word = distance + continuation + sem_poem + sem_word + grammar
     return liklihood_of_traliing_word
