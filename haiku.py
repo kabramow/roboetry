@@ -39,33 +39,26 @@ class Haiku(object):
 
     def choose_lines_list(self, num_lines):
         """returns list of lists with each sublist representing a line in the output
-        int -> nested list
+        int -> nested list"""
 
-        Note: This is the majority of our run time because it iterates through the entire
-        origin text several times. We should think about making it more efficient."""
-        self.originText = self.originText.replace("\n", " " + constants.FAKE_NEW_LINE + " ")
-        self.originText = self.originText.replace(" " + constants.FAKE_NEW_LINE + "  " + constants.FAKE_NEW_LINE + " ",
-                                                  " " + constants.FAKE_NEW_LINE + " ")
-        line = []
-        lines = []
-        words_in_text = [w.lower() for w in nltk.word_tokenize(self.originText)]
-        for word in words_in_text:
-            if word != constants.FAKE_NEW_LINE:
-                line.append(word)
-            else:
-                lines.append(line)
-                line = []
-        chosen_lines = []
-        start = random.randint(0,len(lines)-num_lines)
+        lines = self.originText.split("\n")
+        start = random.randint(0, len(lines) - num_lines)
         lines_chosen = 0
+        temp_chosen_lines = []
 
         while lines_chosen < num_lines:
-            if lines[start] is not []:
-                chosen_lines.append(lines[start])
+            if lines[start] is not '':
+                print(str([lines[start]]))
+                temp_chosen_lines.append(lines[start])
                 lines_chosen += 1
                 start += 1
             else:
                 start += 1
+
+        chosen_lines = []
+        for line in temp_chosen_lines:
+            updated_line = [w.lower() for w in nltk.word_tokenize(line)]
+            chosen_lines.append(updated_line)
 
         return chosen_lines
 
