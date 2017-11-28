@@ -12,3 +12,7 @@ The Haiku class stores a haiku object
 The search class contains our search algorithm and heuristics
 
 The rest are objects or helper functions that have been separated for easier reading
+
+Needs NLTK, Python 3.6
+
+https://github.com/kabramow/roboetry
