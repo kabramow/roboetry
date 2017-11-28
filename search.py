@@ -325,19 +325,19 @@ def grammar_heuristic(word1, word2):
     if word_prob is not None:
         following_word = wp.WordProbability.contains_following_word(word_prob, word2)
         if following_word is not None:
-            return fw.FollowingWord.probability_following_word(following_word, word_prob.word_count)*-10
+            return fw.FollowingWord.probability_following_word(following_word, word_prob.word_count)*-1
         else:
             # find part of speech of word2
             word2_pos = nltk.pos_tag(word2)[0][1]
-            return wp.WordProbability.part_of_speech_prob(word_prob, word2_pos)*-2
+            return wp.WordProbability.part_of_speech_prob(word_prob, word2_pos)*-0.3
     else:
         word1_pos = nltk.pos_tag(word1)[0][1]
         word2_pos = nltk.pos_tag(word2)[0][1]
         pos_prob = prob_table.find_part_of_speech(word1_pos)
         if pos_prob is not None:
-            return pp.POSProbability.following_pos_probability(pos_prob, word2_pos)*-1
+            return pp.POSProbability.following_pos_probability(pos_prob, word2_pos)*-0.2
         else:
-            return 1
+            return 0
 
 
 def heuristic(haiku, word1, word2, search, start_of_line, poem):
