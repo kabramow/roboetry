@@ -325,7 +325,7 @@ def grammar_heuristic(word1, word2):
     if word_prob is not None:
         following_word = wp.WordProbability.contains_following_word(word_prob, word2)
         if following_word is not None:
-            return fw.FollowingWord.probability_following_word(following_word, word_prob.word_count)*-1
+            return fw.FollowingWord.probability_following_word(following_word, word_prob.word_count)*-2
         else:
             # find part of speech of word2
             word2_pos = nltk.pos_tag(word2)[0][1]
@@ -347,9 +347,9 @@ def heuristic(haiku, word1, word2, search, start_of_line, poem):
     this means the lowest negative will be chosen first.
     string, string -> int"""
     distance = distance_between_words(word1, word2, search)
-    continuation = continuation_probability(haiku, word1, word2)
+    # continuation = continuation_probability(haiku, word1, word2)
     sem_poem = semantic_similarity_to_previous_word(word1, word2)
     sem_word = semantic_similarity_to_poem(word2, poem)
     grammar = grammar_heuristic(word1, word2)
-    likelihood_of_trailing_word = distance + continuation + sem_poem + sem_word + grammar
+    likelihood_of_trailing_word = distance + sem_poem + sem_word + grammar
     return likelihood_of_trailing_word
